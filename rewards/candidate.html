@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My EyeSTAR Progress — GAE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','ui-sans-serif','system-ui']}}}};</script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <main class="max-w-xl mx-auto px-4 py-12">
+    <h1 class="text-2xl font-extrabold">EyeSTAR LASIK REWARDS Progress Page</h1>
+    <p class="text-slate-600 mt-1 text-sm">Our dear Vision Ambassador please enter your coupon code to see how many of your referrals completed LASIK and your total credit.</p>
+
+    <form id="candidateLookupForm" class="bg-white rounded-2xl p-6 shadow ring-1 ring-slate-200 mt-5 grid gap-3" novalidate>
+      <label class="text-sm">My Coupon Code
+        <input id="candidateCoupon" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-blue-500 focus:ring-blue-500" placeholder="EYS-…" />
+      </label>
+      <button type="submit" class="rounded-xl bg-slate-900 text-white px-5 py-3 text-sm">Show My Progress</button>
+      <p id="candidateMsg" class="text-sm"></p>
+      <div id="candidateStats" class="text-sm text-slate-700"></div>
+    </form>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

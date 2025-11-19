@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EyeSTAR Rewards Program</title>
+  <meta name="description" content="Help friends get LASIK at EyeSTAR. Earn free LASIK after 5 completed referrals. Get your unique code + QR in seconds." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+        colors: { brand: {50:'#eff6ff',500:'#2563eb',600:'#1d4ed8',700:'#1e40af'} }
+      }}
+    };
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    .hero-img{background-image:url('images/m1.png'); background-size:cover; background-position:center;}
+    .glass{backdrop-filter: blur(10px); background: rgba(255,255,255,.78);}
+    /* --- animations for CTA --- */
+    @keyframes cta-flash { 0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.0)} 50%{box-shadow:0 0 0 10px rgba(37,99,235,.15)} }
+    .animate-flash{ animation: cta-flash 700ms ease-in-out 3; }
+    @keyframes arrow-bounce { 0%,100%{ transform: translate(-10px,-50%);} 50%{ transform: translate(0,-50%);} }
+    .arrow-pointer{ animation: arrow-bounce 900ms ease-in-out 6; }
+	  
+
+  
+        #video-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 100;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 960px;
+            height: 0;
+            padding-bottom: 50.625%; 
+            background-color: #000;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        
+       #video-modal-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        
+        #video-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 32px;
+            height: 32px;
+            color: #fff;
+            background: transparent;
+            border: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 0.5;
+        }
+
+        .no-bullets {
+            list-style-type: none;
+        }
+			
+			
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+  <!-- Hero -->
+  <header class="relative min-h-[70vh] md:min-h-[85vh] hero-img overflow-visible"> 
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/20 to-slate-900/40"></div>
+    <div class="relative z-10 max-w-6xl mx-auto h-full px-4 flex items-center">
+      <div class="grid lg:grid-cols-2 gap-8 w-full items-center">
+        <div class="text-white">
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+            Help 5 people see better. <span class="text-blue-200">Your LASIK is free.</span>
+          </h1>
+          <p class="mt-4 text-lg text-white/90 max-w-xl">Become our Vision Ambassador&nbsp;</p>
+          <p class="mt-4 text-lg text-white/90 max-w-xl">Invite your family, friends, colleagues, and community to EyeSTAR for LASIK. Share your unique code so they can book with confidence and enjoy their rewards.&nbsp;</p>
+          <p class="mt-4 text-lg text-white/90 max-w-xl">• Each person you refer gets a free EyeSTAR Suite night or €50 off their LASIK.&nbsp;</p>
+<p class="mt-4 text-lg text-white/90 max-w-xl">• After 5 completed LASIK referrals: your LASIK is our gift.</p>
+<div class="mt-6 flex flex-wrap gap-3">
+          <!-- Clicking this button shows arrow + flashes the card -->
+          <a id="btnGetCode" href="#get-code" class="inline-flex items-center rounded-xl bg-white text-slate-900 px-5 py-3 font-semibold shadow hover:shadow-lg">
+          Get my ID code
+        </a>
+          <a href="#how" class="inline-flex items-center rounded-xl bg-white/10 ring-1 ring-white/40 text-white px-5 py-3 font-semibold">How it works</a>
+          </div>
+        </div>
+
+        <!-- Code card -->
+        <div id="get-code" class="glass rounded-3xl p-6 sm:p-8 shadow-xl ring-1 ring-white/50 mt-6 scroll-mt-24 relative ">
+          <!-- floating arrow (hidden by default) -->
+          <div id="ctaArrow" class="hidden absolute -left-10 top-1/2 -translate-y-1/2 pointer-events-none">
+            <svg class="arrow-pointer" width="48" height="48" viewBox="0 0 24 24" fill="none">
+              <path d="M3 12h14M13 5l7 7-7 7" stroke="#fff" stroke-opacity=".9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <h2 class="text-slate-900 text-2xl font-bold">Create your personal code</h2>
+          <p class="text-slate-600 text-sm mt-1">Instant unique code + QR. We’ll save your info to our records.</p>
+
+          <form id="gaeForm" class="mt-5 grid gap-3" novalidate>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="text-sm">First name
+                <input required name="firstName" class="mt-1 w-full rounded-xl border border-slate-300 px-1 py-1 text-base
+         focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none" />
+              </label>
+              <label class="text-sm">Last name
+                <input required name="lastName" class="mt-1 w-full rounded-xl border border-slate-300 px-1 py-1 text-base
+         focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none" />
+              </label>
+            </div>
+            <label class="text-sm">Email
+              <input required type="email" name="email" class="mt-1 w-full rounded-xl border-slate-300 px-1 text-base
+         focus:border-brand-500 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+            </label>
+            <label class="text-sm">Mobile / WhatsApp
+              <input required type="tel" name="phone" class="mt-1 w-full rounded-xl border-slate-300 px-1 text-base
+         focus:border-brand-500 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+            </label>
+            <label class="text-sm">Country / City (optional)
+              <input name="location" class="mt-1 w-full rounded-xl border-slate-300 px-1 text-base
+         focus:border-brand-500 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+            </label>
+
+            <label class="text-xs flex items-start gap-2 mt-1">
+              <input id="consent" type="checkbox" required class="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600" />
+              I agree to the <a href="#terms" class="underline">program terms</a> and consent to be contacted by EyeSTAR.
+            </label>
+
+            <div class="grid sm:grid-cols-2 gap-3 mt-1">
+              <button type="submit" id="generateBtn" class="rounded-xl bg-brand-600 text-white px-5 py-3 font-semibold hover:bg-brand-700">Generate my ID code</button>
+              <button type="button" id="resetBtn" class="rounded-xl bg-white text-slate-700 ring-1 ring-slate-300 px-5 py-3 font-semibold hover:bg-slate-50">Reset</button>
+            </div>
+            <p id="formMsg" role="status" aria-live="polite" class="hidden mt-2 text-sm"></p>
+          </form>
+
+          <div class="mt-5">
+            <label class="block text-sm font-medium">Your ID Code</label>
+            <div class="mt-1 flex items-center gap-2">
+              <input id="couponCode" readonly class="flex-1 rounded-xl border-slate-300 bg-white px-3 py-3 font-mono text-sm" placeholder="— generate your code —" />
+              <button id="copyBtn" class="rounded-xl bg-white text-slate-700 ring-1 ring-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-50" disabled>Copy</button>
+            </div>
+
+            <!-- QR row: button sits to the side of the QR (not under) -->
+            <div class="mt-3 flex items-center gap-4">
+              <div>
+                <label class="block text-sm font-medium">QR Code (encodes the raw code)</label>
+                <div id="qr" class="mt-2 w-[220px] h-[220px] rounded-2xl border border-slate-200 grid place-items-center bg-white">
+                  <span id="qrHint" class="text-xs text-slate-400">Will appear here</span>
+                </div>
+              </div>
+              <div class="mt-7">
+                <button id="downloadQrBtn" class="rounded-xl bg-white text-slate-700 ring-1 ring-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-50" disabled>Download QR</button>
+                <p id="qrError" class="hidden mt-2 text-xs text-red-600">QR library failed to load. Please check your connection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /card -->
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section id="how" class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center">How it works</h2>
+      <p class="text-slate-600 text-center mt-2">Simple, transparent, and fast.</p>
+
+     <div class="grid md:grid-cols-3 gap-6 mt-8"> 
+		 <!-- Card 1 -->
+<div class="rounded-2xl bg-white ring-1 ring-blue-100 shadow-[0_16px_60px_rgba(69,13,246,0.20)]">
+  <div class="w-full  md:h-128 overflow-hidden rounded-t-2xl">
+    <img src="images/p1.png" alt="Join as GAE" class="w-full h-full object-cover" />
+  </div>
+  <div class="p-5">
+    <h3 class="font-semibold">1) Join as a Vision Ambassador</h3>
+    <p class="text-sm text-slate-700 mt-1">Fill the form to get your <strong>unique code (ID)</strong> and it's&nbsp; <strong>QR</strong>. Save them. We will also save your info securely to protect your program benefits.</p>
+  </div>
+</div>
+		
+		  
+        <!-- Card 2 -->
+        <div class="rounded-2xl bg-white ring-1 ring-blue-100 shadow-[0_16px_60px_rgba(59,130,246,0.20)]">
+          <div class="w-full  md:h-128 overflow-hidden rounded-t-2xl">
+            <img src="images/p2.png" alt="Share your code" class="max-h-full max-w-full object-contain" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">2) Share easily</h3>
+            <p class="text-sm text-slate-700 mt-1">Friends (or anyone you referred to us) use your code when booking for their LASIK. They choose a free Suite stay or €50 off.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="rounded-2xl bg-white ring-1 ring-blue-100 shadow-[0_16px_60px_rgba(69,13,246,0.20)]">
+          <div class="w-full  md:h-128 overflow-hidden rounded-t-2xl">
+           <img src="images/p3.png" alt="Join as GAE" class="w-full h-full object-cover" /> 
+																	  
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold">3) Earn rewards</h3>
+            <p class="text-sm text-slate-700 mt-1">After <strong>5 completed LASIK</strong> referrals, you get <strong>free LASIK + Suite</strong>.</p>
+          </div>
+        </div>
+		</div>
+		  </section>
+        	
+		<section id="patients" class="py-16 sm:py-24 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
+                        What Our 1,500+ Patients Say on YouTube
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Hear directly from patients who changed their lives with EyeSTAR.
+                    </p>
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="W6XFU13Bwug">
+                            <img src="https://img.youtube.com/vi/W6XFU13Bwug/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-30 hover:opacity-100 transition-opacity rounded-t-xl">
+                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">"Life-changing is an understatement!"</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                "Everything was wonderful and now it is the next day and I can see!"
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                — Nick from USA
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="Yq66j76J-L0"> <img src="https://img.youtube.com/vi/Yq66j76J-L0/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
+                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">"The team was incredibly professional."</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                "I'll be forever grateful that EyeSTAR helped me get rid of glasses that I have been wearing for 15 years."
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                — Francis from Canada
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="5E9hqW_doSs"> <img src="https://img.youtube.com/vi/5E9hqW_doSs/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
+                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">"My only regret? Not doing it sooner."</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                "We are very pleased with the results."
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                — Holger and Claudia from Germany
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="8-SG8vdcPWA"> <img src="https://img.youtube.com/vi/8-SG8vdcPWA/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
+                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">"Astigmatism is completely gone."</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                "EyeSTAR, you're amazing."
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                — Sheba from Uganda
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="bCrnK_hA-gI"> <img src="https://img.youtube.com/vi/bCrnK_hA-gI/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
+                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">"We traveled for the procedure."</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                "We are going to tell all of our friends...and that's how we got here, through a friend's recommendation."
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                — Mario and Viktor (Twins) from Bulgaria
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+                        <button class="w-full relative h-0 pb-[56.25%]">
+                            <img src="images/clinic-hall.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
+                               <a href="https://www.youtube.com/@EyeSTARLASIKInstitutes/videos" target="_blank"> <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg></a>
+                            </div>
+                        </button>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-accent">Visit our YouTube Channel</h4>
+                            <p class="mt-2 text-base text-gray-700">
+                                And see what our clinic offers.
+                            </p>
+                            <p class="mt-4 text-sm font-semibold text-secondary">
+                                <a href="https://www.youtube.com/@EyeSTARLASIKInstitutes/videos">Click to go to our YouTube channel.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		
+		
+		
+		
+		
+		  <section id="faq" class="bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold text-slate-900 text-center">FAQ</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">What do my friends (or anyone you referred to us) receive?</h3>
+          <p class="text-sm text-slate-700 mt-1">With your code they pick a complimentary EyeSTAR Suite stay or €50 off their surgery.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">Do ineligible candidates count?</h3>
+          <p class="text-sm text-slate-700 mt-1">Yes. If someone is medically ineligible after exam, they count as <strong>0.5</strong> towards your total. Maximum of 2 medically ineligible referral can be used towards your goal.&nbsp;&nbsp;</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">How is progress tracked?</h3>
+          <p class="text-sm text-slate-700 mt-1">Your referrals are recorded in our clinic's cloud system&nbsp; . You  can check your progress on the
+            <a href="./EyeSTAR_Candidate.html" class="underline">progress page</a> using your code.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">What if I’m not eligible for LASIK?</h3>
+          <p class="text-sm text-slate-700 mt-1">If your exam shows you aren’t a candidate, your reward can be transferred to someone you choose for up to 2 years.</p>
+        </div>
+      
+   
+		<!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">How long does it take?</h3>
+          <p class="text-sm text-slate-700 mt-1">Most ambassadors get their 5 referrals within months. You have up to <strong>2 years</strong> total to reach your goal. If you reach less than 5, you may use your referrals for discount towards your lasik treatment as well.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl p-6 ring-1 ring-slate-200">
+          <h3 class="font-semibold">Can I transfer my reward?</h3>
+          <p class="text-sm text-slate-700 mt-1">Yes. You can transfer your reward to anyone you choose. You can gift it, sell it, it is up to you. But you need to inform us before hand.&nbsp; &nbsp;</p>
+        </div>
+	  
+		  
+	    <div id="terms" class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 md:col-span-2 ring-1 ring-blue-100 shadow-[0_16px_60px_rgba(59,130,246,0.20)]">
+  <h3 class="font-semibold text-center">A few words about EyeSTAR LASIK Rewards Program</h3>
+
+  <p class="mt-2 text-sm text-slate-700">
+    Instead of paying advertising giants, we would rather reward the people who trust us. Almost everyone today has a small social network – family, friends, colleagues, or online followers. Reaching just <strong>5 LASIK candidates</strong> in your own circle is enough to qualify for your LASIK reward.
+  </p>
+
+  <ul class="mt-3 text-sm text-slate-700 list-disc list-inside space-y-1">
+    <li>Each person you refer to EyeSTAR gets a reward: a free EyeSTAR Suite night or €50 off their LASIK.</li>
+    <li>When 5 of your referrals complete LASIK at EyeSTAR, your LASIK is our gift.</li>
+    <li>Everyone wins: they receive trusted care and a reward, you earn free LASIK, and we grow through real patient recommendations – not anonymous ads.</li>
+  </ul>
+
+  <p class="mt-3 text-sm text-slate-700 font-semibold"><strong> Why you can recommend EyeSTAR with confidence </strong></p>
+<ul class="mt-1 text-sm text-slate-700 list-disc list-inside space-y-1">
+  <li>We have been performing laser vision correction since the very first excimer laser (serial no. 001).</li>
+    <li>LASIK and eye laser surgery is the only thing we do – we are a focused specialist clinic, not a pop-up or hospital chain.</li>
+    <li>There are 1,500+ real patient video testimonials on our YouTube channel. Watching them will give you a precise idea of our clinic, our team, and our service quality.</li>
+	  
+	 
+	  <h3 class="font-bold"><br>
+	    The process is very simple.. </h3> 
+	
+	  <li>After you fill out the form above, the system will generate your unique referral ID code. 
+		  Please copy it and <strong>keep it</strong> somewhere safe. </li>
+	    <li>
+	    Share this code with LASIK candidates in your circle – family, friends, colleagues, gym buddies, or anyone in your
+	    WhatsApp and social groups. For example, you might write: <em>“Thinking about LASIK to get rid of your glasses? DM me, I have a special EyeSTAR discount code.”</em> <br>
+	    </li>
+	    <li>When someone uses your code for their LASIK treatment at EyeSTAR, you start earning rewards. Once <strong>5 people</strong> have their LASIK done with your referral code, <strong>your own LASIK is free.</strong> </li>
+<li>
+	    All standard laser procedures (LASIK, LASEK and No-Touch) are fully covered, including medications and protective glasses.
+	    As a thank you to our Vision Ambassadors, we also provide <strong>1 free night in the EyeSTAR Suite</strong> and 
+	    complimentary <strong>airport ↔ Suite transfers</strong>.</p></li>
+</ul>
+</div>
+
+	  
+	  <div id="terms" class="rounded-2xl bg-white ring-1 ring-slate-200 p-6 md:col-span-2 ring-1 ring-blue-100 shadow-[0_16px_60px_rgba(59,130,246,0.20)]">
+
+  <h3 class="font-semibold text-center"><strong>Program Terms<br><br></strong></h3>
+
+  <li>
+    <strong>Referral</strong> means any person (friend, family member, colleague, or even someone you do not personally know)
+    whom you help to have a LASIK treatment at EyeSTAR using your unique ID code provided here.
+  </li>
+
+  <li>
+    Please obtain <strong>only one</strong> ID code and <strong>use the same ID code</strong> for all of your referrals.
+  </li>
+
+  <li>
+    You <strong>win free LASIK + an EyeSTAR Suite stay</strong> after
+    <strong>5 completed LASIK referrals</strong> recorded with your code.
+  </li>
+
+  <li>
+    <strong>Referrals</strong> must be <strong>new patients</strong> with <strong>new appointments</strong> in order to be
+    counted toward your referral goal (not someone who has already booked an appointment with us).
+  </li>
+
+  <li>
+    All standard laser vision correction treatments such as
+    <strong>LASIK, LASEK, PRK and No-Touch</strong> will be <strong>free with 5 referrals</strong>.
+  </li>
+
+  <li>
+    Special laser operations such as <strong>Z-LASIK</strong> require an extra <strong>€499</strong>, or are free
+    with a total of <strong>8 referrals</strong>.
+  
+    <strong>Contoura</strong> is an additional <strong>€999</strong>, or free with a total of
+    <strong>10 referrals</strong>. <strong>Z-Contoura</strong> is an additional <strong>€1,299</strong>,
+    or free with a total of <strong>12 referrals</strong>.
+  </li>
+
+  <li>
+    You have a total of <strong>2 years</strong> from your signup date to reach 5 referrals. If the program continues,
+    you may ask to have your existing referrals carried over into the new term.
+  </li>
+
+  <li>
+    Up to <strong>two medically ineligible</strong> candidates (after our examination) count as
+    <strong>0.5 referral each</strong>.
+  </li>
+
+  <li>
+    If you can’t wait to reach 5 referrals, you may use referrals as discounts:
+    <strong>€150 per qualifying referral</strong>.
+  </li>
+
+ <li>
+    <strong>Reverse option:</strong> you may have surgery now at full price and send referrals later.
+    The calculation and process for this option are different; please contact us if you would like to choose this path.
+  </li>
+
+  <li>
+    <strong>LASIK, PRK, LASEK, Z-LASIK, No-Touch, SMILE PRO, Contoura and Z-Contoura</strong> each count as
+    <strong>1 referral</strong>.
+  </li>
+	 <li>
+    <strong>Clinical eligibility and standard medical criteria</strong> apply to all surgeries.
+    Final approval is always based on our medical examination and safety guidelines.
+  </li>	  
+			</div>  
+		 </div>	  
+			  
+
+
+        <!-- Card 7 (Program Terms – spans 2 columns on md+) -->
+   
+      </div>
+
+      <!-- WhatsApp CTA (number hidden in code; set at runtime) -->
+      <div class="mt-10 text-center">
+        <a id="whBtn" href="#" class="inline-flex items-center gap-2 rounded-xl bg-green-600 text-white px-5 py-3 font-semibold hover:bg-green-700">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3.5A10.5 10.5 0 0 0 3.5 20l-1 3.5L6 22.5A10.5 10.5 0 1 0 20 3.5ZM12 20a8 8 0 0 1-4.08-1.11l-.29-.18-2.72.72.73-2.65-.19-.31A8 8 0 1 1 20 12a8 8 0 0 1-8 8Zm4.59-5.41c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.55.12-.63.8-.77.97-.28.18-.53.06a6.6 6.6 0 0 1-1.94-1.2 7.3 7.3 0 0 1-1.35-1.66c-.14-.25 0-.39.1-.51.1-.1.25-.28.37-.42s.16-.24.24-.41.04-.31-.02-.43-.55-1.33-.76-1.81c-.2-.48-.41-.41-.55-.42h-.47a.91.91 0 0 0-.66.31c-.23.25-.86.84-.86 2.05s.89 2.38 1 2.55a9.6 9.6 0 0 0 3.28 3.27 10.7 10.7 0 0 0 1.98.83c.83.26 1.58.22 2.18.13.67-.1 2.05-.84 2.34-1.65s.29-1.51.2-1.65-.23-.18-.48-.3Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <div class="font-semibold text-white">EyeSTAR LASIK Institute</div>
+        <div class="text-sm text-slate-400">Free LASIK granted after 5 completed referrals recorded under your code. Clinical eligibility required.</div>
+      </div>
+      <div class="md:text-right text-sm space-x-3">
+        <a href="#terms" class="underline">Program Terms</a>
+        <a href="https://lasikinistanbul.com" target="_blank" rel="noopener" class="underline">lasikinistanbul.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load QR library BEFORE app.js -->
+
+	
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            if (menuToggle && mobileMenu && menuIconOpen && menuIconClose) {
+                menuToggle.addEventListener('click', () => {
+                    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                    menuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    menuIconOpen.classList.toggle('hidden');
+                    menuIconClose.classList.toggle('hidden');
+                });
+            }
+
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggle.classList.toggle('active');
+                    const submenu = toggle.nextElementSibling;
+                    const arrow = toggle.querySelector('svg');
+                    
+                    if (submenu.style.display === 'block') {
+                        submenu.style.display = 'none';
+                        if (arrow) arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        submenu.style.display = 'block';
+                        if (arrow) arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    const arrow = button.querySelector('.faq-arrow');
+                    const isOpen = answer.style.maxHeight;
+
+                    faqQuestions.forEach(b => {
+                        if (b !== button) {
+                            b.nextElementSibling.style.maxHeight = null;
+                            b.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    if (isOpen) {
+                        answer.style.maxHeight = null;
+                        if (arrow) arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        if (arrow) arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1 
+                });
+                
+                fadeElements.forEach(el => {
+                    observer.observe(el);
+                });
+            } else {
+                fadeElements.forEach(el => {
+                    el.classList.add('visible');
+                });
+            }
+            
+            if (mobileMenu) {
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!link.parentElement.querySelector('.submenu')) {
+                            if (menuToggle) menuToggle.click();
+                        }
+                    });
+                });
+            }
+
+
+const videoModalOverlay = document.getElementById('video-modal-overlay');
+            const videoModalIframe = document.getElementById('video-modal-iframe');
+            const videoModalClose = document.getElementById('video-modal-close');
+            const videoThumbnailButtons = document.querySelectorAll('.video-thumbnail-button');
+
+            function openModal(videoId) {
+                videoModalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
+                videoModalOverlay.style.display = 'flex';
+            }
+
+            function closeModal() {
+                videoModalIframe.src = ''; 
+                videoModalOverlay.style.display = 'none';
+            }
+
+            videoThumbnailButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const videoId = button.getAttribute('data-video-id');
+                    openModal(videoId);
+                });
+            });
+
+            videoModalClose.addEventListener('click', closeModal);
+            videoModalOverlay.addEventListener('click', (e) => {
+                if (e.target === videoModalOverlay) {
+                    closeModal();
+                }
+            });
+
+        });
+    </script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+	
+<div id="video-modal-overlay">
+        <div id="video-modal-content">
+            <button id="video-modal-close" aria-label="Close video player">×</button>
+            <iframe id="video-modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
