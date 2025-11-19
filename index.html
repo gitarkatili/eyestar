@@ -1,895 +1,795 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyeSTAR LASIK Institute - Advanced Laser Eye Surgery</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            padding-top: 120px; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FFFFFF',
-                        secondary: '#1a1a1a', 
-                        accent: {
-                            DEFAULT: '#f97316', 
-                            hover: '#ea580c' 
-                        }
-                    },
-                    height: {
-                        '10': '40px',
-                        '20': '80px',
-                    },
-                    padding: {
-                        '30': '120px',
-                    }
-                }
-            }
-        };
+  <title>EyeSTAR LASIK Institute — Advanced Laser Eye Surgery in Istanbul</title>
+  <meta name="description" content="See clearly without glasses or contacts. Free LASIK candidacy consultation at EyeSTAR LASIK Institute, Taksim. All-laser technology, expert surgeons, international patient support." />
+  <meta name="keywords" content="LASIK Istanbul, laser eye surgery Turkey, Z-LASIK, PRK, Contoura Vision, EyeSTAR" />
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="EyeSTAR LASIK Institute — Advanced Laser Eye Surgery in Istanbul" />
+  <meta property="og:description" content="See clearly without glasses or contacts. Free LASIK candidacy consultation. All-laser technology, expert surgeons, international patient support." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="lasik-bg.jpg" />
+  <meta property="og:url" content="https://www.eyestar.us/" />
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        .group:hover .group-hover\:block {
-            display: block;
-        }
-        
-        .submenu-toggle + .submenu {
-            display: none;
-        }
-        .submenu-toggle.active + .submenu {
-            display: block;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        .faq-answer {
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .form-checkbox {
-            appearance: none;
-            -webkit-appearance: none;
-            height: 1.25rem;
-            width: 1.25rem;
-            border: 2px solid #d1d5db; 
-            border-radius: 0.25rem;
-            display: inline-block;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .form-checkbox:checked {
-            background-color: #f97316; 
-            border-color: #f97316;
-        }
-        
-        .form-checkbox:checked::after {
-            content: "";
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        #video-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 100;
-            display: none; 
-            justify-content: center;
-            align-items: center;
-        }
-        
-        #video-modal-content {
-            position: relative;
-            width: 90%;
-            max-width: 960px;
-            height: 0;
-            padding-bottom: 50.625%; 
-            background-color: #000;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        
-        #video-modal-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 0.5rem;
-        }
-        
-        #video-modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            width: 32px;
-            height: 32px;
-            color: #fff;
-            background: transparent;
-            border: none;
-            font-size: 2.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 0.5;
-        }
+  <style>
+    :root {
+      --accent: #f97316;
+      --accent-hover: #ea580c;
+      --dark: #1a1a1a;
+    }
+    body { font-family: 'Inter', sans-serif; padding-top: 120px; }
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .form-checkbox { appearance:none; -webkit-appearance:none; height:1.25rem; width:1.25rem; border:2px solid #d1d5db; border-radius:.25rem; position:relative; cursor:pointer; }
+    .form-checkbox:checked { background-color: var(--accent); border-color: var(--accent); }
+    .form-checkbox:checked::after { content:""; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E"); background-size:100% 100%; background-repeat:no-repeat; background-position:center; }
+    .no-bullets { list-style-type:none; padding-left:0; }
 
-        .no-bullets {
-            list-style-type: none;
-        }
-    </style>
+    /* Video modal (for testimonials) existing structure kept */
+    #video-modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:100; display:none; justify-content:center; align-items:center; }
+    #video-modal-content { position:relative; width:90%; max-width:960px; height:0; padding-bottom:50.625%; background:#000; border-radius:.5rem; box-shadow:0 10px 25px rgba(0,0,0,.5); }
+    #video-modal-iframe { position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:.5rem; }
+    #video-modal-close { position:absolute; top:-40px; right:0; width:32px; height:32px; color:#fff; background:transparent; border:none; font-size:2.5rem; font-weight:bold; cursor:pointer; line-height:.5; }
+
+    /* Sticky bottom CTA bar (appears after scroll) */
+    #sticky-cta { position:fixed; left:0; right:0; bottom:-120px; transition:bottom .3s ease; z-index:60; }
+    #sticky-cta.visible { bottom:0; }
+
+    /* Floating WhatsApp */
+    .wa-float { position:fixed; right:1rem; bottom:5.5rem; z-index:60; }
+
+    /* YouTube channel popup */
+    #youtube-popup { position:fixed; inset:0; background:rgba(0,0,0,.8); display:none; align-items:center; justify-content:center; z-index:70; }
+    #youtube-popup .wrap { width:min(900px, 92vw); aspect-ratio:16/9; position:relative; }
+    #youtube-close { position:absolute; top:-42px; right:0; font-size:2.25rem; color:#fff; font-weight:800; line-height:1; }
+  </style>
+
+  <!-- JSON-LD: MedicalClinic w/ ContactPoint -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "EyeSTAR LASIK Institute",
+    "url": "https://www.eyestar.us/",
+    "logo": "lasik-logo.png",
+    "image": "lasik-bg.jpg",
+    "description": "Advanced all-laser vision correction with international patient support.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kocatepe Mah. Cumhuriyet Cad. Ceylan Apt. No:13/1-2",
+      "addressLocality": "Taksim - Beyoğlu",
+      "addressCountry": "TR"
+    },
+    "telephone": "+90 212 361 5000",
+    "medicalSpecialty": "Ophthalmologic",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+90 541 500 1900",
+      "contactType": "customer service",
+      "areaServed": "TR,EU,GB,QA,AE,SA,US"
+    }]
+  }
+  </script>
 </head>
-<body class="bg-primary text-secondary">
 
-    <header class="fixed top-0 left-0 w-full z-50">
-        <div id="top-bar" class="bg-white text-secondary h-10 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-                <div class="flex items-center gap-4 sm:gap-6">
-                    <a href="tel:+902123615000" class="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <span class="hidden sm:inline">+90 212 361 5000</span>
-                    </a>
-                    <a href="tel:+905415001900" class="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                            </svg>
-                        <span class="hidden sm:inline">+90 541 500 1900</span>
-                    </a>
-                    <a href="mailto:info@eyestar.us" class="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span class="hidden sm:inline">info@eyestar.us</span>
-                    </a>
-                </div>
-                <div class="flex items-center gap-3 sm:gap-4">
-                    <a href="https://www.facebook.com/eyestar" target="_blank" class="text-secondary hover:text-accent transition-colors" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/lasikinistanbul/" target="_blank" class="text-secondary hover:text-accent transition-colors" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCL6HA5afxp-WIZcLIDv1PLQ" target="_blank" class="text-secondary hover:text-accent transition-colors" aria-label="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
-                        </svg>
-                    </a>
-                    </div>
-            </div>
+<body class="bg-white text-[var(--dark)]">
+  <!-- Top utility bar -->
+  <header class="fixed top-0 left-0 w-full z-50">
+    <div id="top-bar" class="bg-white text-[var(--dark)] h-10 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        <div class="flex items-center gap-4 sm:gap-6">
+          <a href="tel:+902123615000" class="flex items-center gap-2 text-sm hover:text-[var(--accent)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            <span class="hidden sm:inline">+90 212 361 5000</span>
+          </a>
+          <a href="https://wa.me/905415001900" class="flex items-center gap-2 text-sm hover:text-[var(--accent)] transition-colors" aria-label="WhatsApp chat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+            <span class="hidden sm:inline">+90 541 500 1900</span>
+          </a>
+          <a href="mailto:info@eyestar.us" class="flex items-center gap-2 text-sm hover:text-[var(--accent)] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <span class="hidden sm:inline">info@eyestar.us</span>
+          </a>
         </div>
-        
-        <nav id="main-nav" class="bg-white shadow-md h-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-                <div class="flex-shrink-0">
-                    <a href="#">
-                        <img class="h-16 w-auto" src="lasik-logo.png" alt="EyeSTAR Logo">
-                    </a>
-                </div>
-                
-                <div class="hidden lg:flex flex-grow justify-center">
-                    <ul class="flex items-center space-x-1">
 
-                        <li><a href="#steps" class="px-3 py-2 rounded-md text-sm font-medium text-secondary hover:bg-gray-100 hover:text-accent transition-all duration-200">Your Journey</a></li>
-                        
-                        <li><a href="#technology" class="px-3 py-2 rounded-md text-sm font-medium text-secondary hover:bg-gray-100 hover:text-accent transition-all duration-200">Our Technology</a></li>
-                        
-                        <li><a href="#expertise" class="px-3 py-2 rounded-md text-sm font-medium text-secondary hover:bg-gray-100 hover:text-accent transition-all duration-200">Why EyeSTAR</a></li>
-
-                        <li><a href="#patients" class="px-3 py-2 rounded-md text-sm font-medium text-secondary hover:bg-gray-100 hover:text-accent transition-all duration-200">The Patients</a></li>
-
-                        <li><a href="#faq" class="px-3 py-2 rounded-md text-sm font-medium text-secondary hover:bg-gray-100 hover:text-accent transition-all duration-200">Your Questions</a></li>
-
-                    </ul>
-                </div>
-
-                <div class="hidden lg:flex items-center flex-shrink-0">
-                     <a href="#contact" class="px-5 py-2 rounded-full text-sm font-semibold text-white bg-orange-400 hover:bg-accent-hover shadow-lg transition-all transform hover:scale-105">
-                        Contact Us
-                    </a>
-                </div>
-
-                <div class="lg:hidden">
-                    <button id="menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-accent hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="lg:hidden hidden" id="mobile-menu">
-                <ul class="absolute top-full left-0 w-full bg-white shadow-lg py-2 max-h-[calc(100vh-120px)] overflow-y-auto">
-                    <li><a href="#steps" class="block px-5 py-3 text-base font-medium text-secondary hover:bg-gray-100 hover:text-accent">Your Journey</a></li>
-                    
-                    <li><a href="#technology" class="block px-5 py-3 text-base font-medium text-secondary hover:bg-gray-100 hover:text-accent">Our Technology</a></li>
-                    
-                    <li><a href="#expertise" class="block px-5 py-3 text-base font-medium text-secondary hover:bg-gray-100 hover:text-accent">Why EyeSTAR</a></li>
-
-                    <li><a href="#patients" class="block px-5 py-3 text-base font-medium text-secondary hover:bg-gray-100 hover:text-accent">The Patients</a></li>
-
-                    <li><a href="#faq" class="block px-5 py-3 text-base font-medium text-secondary hover:bg-gray-100 hover:text-accent">Your Questions</a></li>
-
-                    <li><a href="#contact" class="block px-5 py-4 text-base font-medium text-white bg-orange-400 text-center">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gray-800 -mt-30">
-            <div class="absolute inset-0">
-                <img src="lasik-bg.jpg" 
-                     alt="Modern eye clinic" 
-                     class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-secondary/60"></div>
-            </div>
-
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="text-white text-center lg:text-left">
-                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" style="text-shadow: gray 0 5px 25px;">
-                            See the World Clearly
-                        </h1>
-                        <p class="mt-6 text-xl sm:text-2xl text-white max-w-2xl mx-auto lg:mx-0" style="text-shadow: gray 0 5px 25px;">
-                            Experience life-changing vision correction at EyeSTAR LASIK Institute. Your journey to perfect sight starts here.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center text-secondary mb-6">
-                            Start Your Free Consultation
-                        </h2>
-                        <form action="https://api.web3forms.com/submit" method="POST" id="hero-form">
-                            <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75">
-                            <input type="hidden" name="subject" value="New Consultation Request from EyeSTAR Website">
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success"> <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="hero-name" class="block text-sm font-medium text-gray-700">Name</label>
-                                    <input type="text" name="name" id="hero-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div>
-                                    <label for="hero-surname" class="block text-sm font-medium text-gray-700">Surname</label>
-                                    <input type="text" name="surname" id="hero-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="hero-email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                                    <input type="email" name="email" id="hero-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="hero-phone" class="block text-sm font-medium text-gray-700">Telephone Number</label>
-                                    <input type="tel" name="phone" id="hero-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="hero-message" class="block text-sm font-medium text-gray-700">Message</label>
-                                    <textarea name="message" id="hero-message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent"></textarea>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">What is your vision problem? (Check all that apply)</label>
-                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                                        <label for="chk-myopia" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Myopia" id="chk-myopia" class="form-checkbox"> Myopia (Nearsightedness)
-                                        </label>
-                                        <label for="chk-hypermetropia" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Hypermetropia" id="chk-hypermetropia" class="form-checkbox"> Hyperopia (Farsightedness)
-                                        </label>
-                                        <label for="chk-astigmatism" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Astigmatism" id="chk-astigmatism" class="form-checkbox"> Astigmatism
-                                        </label>
-                                        <label for="chk-cataracts" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Cataracts" id="chk-cataracts" class="form-checkbox"> Cataracts
-                                        </label>
-                                        <label for="chk-presbyopia" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Presbyopia" id="chk-presbyopia" class="form-checkbox"> Presbyopia (Aging Eyes)
-                                        </label>
-                                        <label for="chk-other" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Other" id="chk-other" class="form-checkbox"> Other / Not Sure
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-6">
-                                <button type="submit" class="w-full py-3 px-6 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-orange-400 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all transform hover:scale-105">
-                                    Send My Request
-                                </button>
-                            </div>
-                            <p class="text-xs text-gray-500 text-center mt-4">We'll get back to you within 24 hours.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="steps" class="py-16 sm:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                        Your Journey to Clear Vision
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        We've simplified the LASIK process into three easy steps.
-                    </p>
-                </div>
-                
-                <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                        <img class="w-full h-48 object-cover" src="s1.png" alt="Eye examination">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-secondary">Step 1 - The Exam</h3>
-                            <p class="mt-3 text-base text-gray-600 flex-grow">
-                                It starts with a comprehensive, 100% free consultation to determine if you are a perfect candidate for LASIK.
-                            </p>
-                            <a href="#" class="inline-block mt-6 px-6 py-3 rounded-lg text-base font-medium text-white bg-orange-400 hover:bg-accent-hover shadow-md transition-all text-center transform hover:scale-105">
-                                Book Your Free Exam
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                        <img class="w-full h-48 object-cover" src="s2.png" alt="LASIK procedure">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-secondary">Step 2 - The LASIK</h3>
-                            <p class="mt-3 text-base text-gray-600 flex-grow">
-                                Your custom, all-laser procedure is performed by our expert surgeons using state-of-the-art technology. It's quick, comfortable, and precise.
-                            </p>
-                            <a href="#" class="inline-block mt-6 px-6 py-3 rounded-lg text-base font-medium text-white bg-orange-400 hover:bg-accent-hover shadow-md transition-all text-center transform hover:scale-105">
-                                Learn About Technology
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
-                        <img class="w-full h-48 object-cover" src="s3.png" alt="Post-op checkup">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold text-secondary">Step 3 - The Check</h3>
-                            <p class="mt-3 text-base text-gray-600 flex-grow">
-                                See the world with new eyes! We'll see you the next day for a quick check-up to celebrate your new vision.
-                            </p>
-                            <a href="#" class="inline-block mt-6 px-6 py-3 rounded-lg text-base font-medium text-white bg-orange-400 hover:bg-accent-hover shadow-md transition-all text-center transform hover:scale-105">
-                                See LASIK Results
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="technology" class="py-16 sm:py-24 bg-primary">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                            Pioneering Technology for Unmatched Precision
-                        </h2>
-                        <p class="mt-6 text-lg text-gray-600">
-                            At EyeSTAR, your vision is our top priority. That's why we use the WaveLight® EX500 Excimer Laser, one of the most advanced and fastest laser systems available. This state-of-the-art, FDA-approved technology allows for a procedure that is not only exceptionally fast but also incredibly precise and safe.
-                        </p>
-                        <ul class="mt-6 space-y-4 text-gray-600 no-bullets">
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 h-6 w-6 text-accent mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span><b>Superior Speed:</b> Minimizes treatment time for your comfort and reduces the risk of corneal dehydration.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 h-6 w-6 text-accent mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span><b>Pinpoint Accuracy:</b> Multi-dimensional eye-tracking ensures the laser is perfectly centered, delivering optimal results even with microscopic eye movements.</span>
-                            </li>
-                             <li class="flex items-start">
-                                <svg class="flex-shrink-0 h-6 w-6 text-accent mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span><b>Customized Treatment:</b> Wavefront Optimized® technology preserves the natural shape of your cornea, leading to sharper, higher quality vision.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="fade-in items-center justify-center" style="margin: auto;">
-                        <img src="509952_470291.png" alt="WaveLight EX500 LASIK Technology" class="rounded-xl shadow-2xl">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="expertise" class="py-16 sm:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                        Expertise You Can Trust, Results You Will Love
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-                        For over two decades, EyeSTAR has been a premier destination for patients from around the globe, including pilots, athletes, and professionals who trust us with their most valuable asset—their sight.
-                    </p>
-                </div>
-                <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in grid grid-cols-2 gap-4">
-                        <img src="865481_8077.jpeg" alt="Lead surgeon at EyeSTAR" class="rounded-xl shadow-xl aspect-[4/5] object-cover">
-                        <img src="975838_55950.jpeg" alt="A bowl full of discarded glasses from happy patients" class="rounded-xl shadow-xl aspect-[4/5] object-cover mt-8">
-                    </div>
-                     <div class="fade-in">
-                        <h3 class="text-2xl font-bold text-secondary">A Legacy of Life-Changing Results</h3>
-                        <p class="mt-4 text-gray-600">
-                           Our institute is led by one of the most experienced LASIK surgeons in the region, who has dedicated his career to perfecting the art and science of vision correction. This deep level of expertise ensures that every patient receives a personalized treatment plan tailored to their unique needs for the best possible outcome.
-                        </p>
-                        <p class="mt-4 text-gray-600">
-                           The bowl of glasses in our clinic is more than just a display; it's a powerful symbol of the freedom and joy our patients experience. Each pair represents a life transformed—a person who now wakes up to a clear world, free from the daily hassles of glasses and contacts. This is the EyeSTAR promise.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="patients" class="py-16 sm:py-24 bg-primary">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                        What Our Patients Say
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Hear directly from patients who changed their lives with EyeSTAR.
-                    </p>
-                </div>
-                
-                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
-                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="W6XFU13Bwug">
-                            <img src="https://img.youtube.com/vi/W6XFU13Bwug/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
-                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </button>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-accent">"Life-changing is an understatement!"</h4>
-                            <p class="mt-2 text-base text-gray-700">
-                                "Everything was wonderful and now it is the next day and I can see!"
-                            </p>
-                            <p class="mt-4 text-sm font-semibold text-secondary">
-                                — Nick from USA
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
-                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="Yq66j76J-L0"> <img src="https://img.youtube.com/vi/Yq66j76J-L0/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
-                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </button>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-accent">"The team was incredibly professional."</h4>
-                            <p class="mt-2 text-base text-gray-700">
-                                "I'll be forever grateful that EyeSTAR helped me get rid of glasses that I have been wearing for 15 years."
-                            </p>
-                            <p class="mt-4 text-sm font-semibold text-secondary">
-                                — Francis from Canada
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
-                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="5E9hqW_doSs"> <img src="https://img.youtube.com/vi/5E9hqW_doSs/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
-                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </button>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-accent">"My only regret? Not doing it sooner."</h4>
-                            <p class="mt-2 text-base text-gray-700">
-                                "We are very pleased with the results."
-                            </p>
-                            <p class="mt-4 text-sm font-semibold text-secondary">
-                                — Holger and Claudia from Germany
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
-                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="8-SG8vdcPWA"> <img src="https://img.youtube.com/vi/8-SG8vdcPWA/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
-                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </button>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-accent">"Astigmatism is completely gone."</h4>
-                            <p class="mt-2 text-base text-gray-700">
-                                "EyeSTAR, you're amazing."
-                            </p>
-                            <p class="mt-4 text-sm font-semibold text-secondary">
-                                — Sheba from Uganda
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
-                        <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="bCrnK_hA-gI"> <img src="https://img.youtube.com/vi/bCrnK_hA-gI/hqdefault.jpg" alt="Video thumbnail" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl">
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity rounded-t-xl">
-                                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </button>
-                        <div class="p-6">
-                            <h4 class="text-xl font-bold text-accent">"We traveled for the procedure."</h4>
-                            <p class="mt-2 text-base text-gray-700">
-                                "We are going to tell all of our friends...and that's how we got here, through a friend's recommendation."
-                            </p>
-                            <p class="mt-4 text-sm font-semibold text-secondary">
-                                — Mario and Viktor (Twins) from Bulgaria
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="faq" class="py-16 sm:py-24 bg-gray-50">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                        Your Questions, Answered
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600">
-                        Find answers to common questions about LASIK.
-                    </p>
-                </div>
-                
-                <div class="mt-12 space-y-4" id="faq-container">
-                    <div class="fade-in bg-white rounded-lg shadow-md">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-5">
-                            <span class="text-lg font-semibold text-secondary">Is the LASIK procedure painful?</span>
-                            <svg class="faq-arrow h-6 w-6 text-accent transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden px-5">
-                            <p class="py-5 text-base text-gray-600 border-t border-gray-200">
-                                No, the procedure is not painful. We use powerful anesthetic eye drops to completely numb your eye before and during the procedure. You may feel a slight pressure sensation, but most patients report no pain at all.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-lg shadow-md">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-5">
-                            <span class="text-lg font-semibold text-secondary">How long does the recovery take?</span>
-                            <svg class="faq-arrow h-6 w-6 text-accent transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden px-5">
-                            <p class="py-5 text-base text-gray-600 border-t border-gray-200">
-                                Recovery is remarkably fast. Most patients notice significantly improved vision within hours and are able to return to work and most normal activities the very next day. We'll provide a detailed post-operative care plan.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-lg shadow-md">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-5">
-                            <span class="text-lg font-semibold text-secondary">Am I a good candidate for LASIK?</span>
-                            <svg class="faq-arrow h-6 w-6 text-accent transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden px-5">
-                            <p class="py-5 text-base text-gray-600 border-t border-gray-200">
-                                Ideal candidates are over 18, have had a stable prescription for at least one year, and have good overall eye health. Conditions like myopia, hypermetropia, and astigmatism can be treated. The best way to know for sure is to book your free, no-obligation consultation.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fade-in bg-white rounded-lg shadow-md">
-                        <button class="faq-question w-full flex justify-between items-center text-left p-5">
-                            <span class="text-lg font-semibold text-secondary">What if I blink during the procedure?</span>
-                            <svg class="faq-arrow h-6 w-6 text-accent transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer max-h-0 overflow-hidden px-5">
-                            <p class="py-5 text-base text-gray-600 border-t border-gray-200">
-                                You don't need to worry about blinking. We use a small, gentle device to hold your eye open. Our advanced laser systems also have eye-tracking technology that follows your eye's microscopic movements, ensuring the laser is perfectly placed at all times.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact" class="py-16 sm:py-24 bg-primary">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight">
-                        Ready to Take the Next Step?
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Contact us today to schedule your free consultation or ask any questions you may have.
-                    </p>
-                </div>
-                
-                <div class="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    <div class="fade-in bg-white p-6 sm:p-8 rounded-xl shadow-xl border border-gray-100">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center text-secondary mb-6">
-                            Start Your Free Consultation
-                        </h2>
-                        <form action="https://api.web3forms.com/submit" method="POST" id="footer-form">
-                            <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75">
-                            <input type="hidden" name="subject" value="New Contact Form Submission from EyeSTAR Footer">
-                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="footer-name" class="block text-sm font-medium text-gray-700">Name</label>
-                                    <input type="text" name="name" id="footer-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div>
-                                    <label for="footer-surname" class="block text-sm font-medium text-gray-700">Surname</label>
-                                    <input type="text" name="surname" id="footer-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="footer-email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                                    <input type="email" name="email" id="footer-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="footer-phone" class="block text-sm font-medium text-gray-700">Telephone Number</label>
-                                    <input type="tel" name="phone" id="footer-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent">
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label for="footer-message" class="block text-sm font-medium text-gray-700">Message</label>
-                                    <textarea name="message" id="footer-message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent"></textarea>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">What is your vision problem? (Check all that apply)</label>
-                                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                                        <label for="chk-myopia-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Myopia" id="chk-myopia-2" class="form-checkbox"> Myopia (Nearsightedness)
-                                        </label>
-                                        <label for="chk-hypermetropia-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Hypermetropia" id="chk-hypermetropia-2" class="form-checkbox"> Hyperopia (Farsightedness)
-                                        </label>
-                                        <label for="chk-astigmatism-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Astigmatism" id="chk-astigmatism-2" class="form-checkbox"> Astigmatism
-                                        </label>
-                                        <label for="chk-cataracts-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Cataracts" id="chk-cataracts-2" class="form-checkbox"> Cataracts
-                                        </label>
-                                        <label for="chk-presbyopia-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Presbyopia" id="chk-presbyopia-2" class="form-checkbox"> Presbyopia (Aging Eyes)
-                                        </label>
-                                        <label for="chk-other-2" class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                                            <input type="checkbox" name="vision_problem[]" value="Other" id="chk-other-2" class="form-checkbox"> Other / Not Sure
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-6">
-                                <button type="submit" class="w-full py-3 px-6 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-orange-400 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all transform hover:scale-105">
-                                    Send Message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <div class="fade-in">
-                        <h3 class="text-2xl font-bold text-secondary mb-4">Visit Us</h3>
-                        <p class="text-lg text-gray-600 mb-6">
-                            EyeSTAR Lasik Institute<br>
-                            Kocatepe Mah. Cumhuriyet Cad. Ceylan Apt. No:13/1-2<br>
-                            Taksim - Beyoğlu / Türkiye
-                        </p>
-                        <div class="aspect-w-16 aspect-h-12 lg:aspect-h-10 rounded-xl shadow-xl overflow-hidden">
-                             <div class="relative h-0 pb-[75%]"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.289047243054!2d28.98555367676941!3d41.04093391629555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab765184be6c1%3A0x1d46a84d41a877a!2sEyeSTAR%20LASIK%20Institute!5e0!3m2!1sen!2str!4v1700055555555!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute top-0 left-0 w-full h-full"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="bg-secondary text-gray-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="space-y-6">
-                    <a href="#">
-                        <img class="h-16 w-auto" src="lasik-logo.png" alt="EyeSTAR Logo">
-                    </a>
-                    <p class="text-sm text-gray-400">
-                        Leading the world in advanced vision correction.
-                    </p>
-                    <div class="space-y-3">
-                        <a href="tel:+902123615000" class="flex items-center gap-3 text-sm hover:text-accent transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <span>+90 212 361 5000</span>
-                        </a>
-                        <a href="tel:+905415001900" class="flex items-center gap-3 text-sm hover:text-accent transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                            </svg>
-                        <span>+90 541 500 1900</span>
-                    </a>
-                        <a href="mailto:info@eyestar.com" class="flex items-center gap-3 text-sm hover:text-accent transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span>info@eyestar.us</span>
-                        </a>
-                    </div>
-                </div>
-            
-                <div>
-                    
-                </div>
-            </div>
-            
-            <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between">
-                <p class="text-sm text-gray-400">© 2025 EyeSTAR LASIK Institute. All rights reserved.</p>
-                <div class="flex items-center gap-5 mt-4 sm:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-accent transition-colors" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-accent transition-colors" aria-label="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.616 1.956 2.398 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-accent transition-colors" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.667 4.77-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.667 4.77 4.919 4.919 1.266-.058 1.646.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358.2 6.78-2.618 6.98-6.98.059 1.281.073 1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
-                    </a>
-                </div>
-            </div>
+        <div class="flex items-center gap-3 sm:gap-4">
+          <a href="https://www.facebook.com/eyestar" target="_blank" class="text-[var(--dark)] hover:text-[var(--accent)]" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lasikinistanbul/" target="_blank" class="text-[var(--dark)] hover:text-[var(--accent)]" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217" /></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCL6HA5afxp-WIZcLIDv1PLQ" target="_blank" class="text-[var(--dark)] hover:text-[var(--accent)]" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/></svg>
+          </a>
         </div>
-    </footer>
-    
-    <div id="video-modal-overlay">
-        <div id="video-modal-content">
-            <button id="video-modal-close" aria-label="Close video player">×</button>
-            <iframe id="video-modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+      </div>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconOpen = document.getElementById('menu-icon-open');
-            const menuIconClose = document.getElementById('menu-icon-close');
-            
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-                menuToggle.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden');
-                menuIconClose.classList.toggle('hidden');
-            });
-            
-            const submenuToggles = document.querySelectorAll('.submenu-toggle');
-            submenuToggles.forEach(toggle => {
-                toggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    toggle.classList.toggle('active');
-                    const submenu = toggle.nextElementSibling;
-                    const arrow = toggle.querySelector('svg');
-                    
-                    if (submenu.style.display === 'block') {
-                        submenu.style.display = 'none';
-                        if (arrow) arrow.style.transform = 'rotate(0deg)';
-                    } else {
-                        submenu.style.display = 'block';
-                        if (arrow) arrow.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
 
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(button => {
-                button.addEventListener('click', () => {
-                    const answer = button.nextElementSibling;
-                    const arrow = button.querySelector('.faq-arrow');
-                    const isOpen = answer.style.maxHeight;
+    <!-- Main nav -->
+    <nav id="main-nav" class="bg-white shadow-md h-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+        <div class="flex-shrink-0">
+          <a href="#"><img class="h-16 w-auto" src="lasik-logo.png" alt="EyeSTAR LASIK Institute logo"></a>
+        </div>
 
-                    faqQuestions.forEach(b => {
-                        if (b !== button) {
-                            b.nextElementSibling.style.maxHeight = null;
-                            b.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
-                        }
-                    });
+        <div class="hidden lg:flex flex-grow justify-center">
+          <ul class="flex items-center space-x-1">
+            <li><a href="#steps" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Your Journey</a></li>
+            <li><a href="#technology" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Our Technology</a></li>
+            <li><a href="#expertise" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Why EyeSTAR</a></li>
+            <li><a href="#patients" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">The Patients</a></li>
+            <li><a href="#faq" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Your Questions</a></li>
+          </ul>
+        </div>
 
-                    if (isOpen) {
-                        answer.style.maxHeight = null;
-                        if (arrow) arrow.style.transform = 'rotate(0deg)';
-                    } else {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        if (arrow) arrow.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
+        <div class="hidden lg:flex items-center flex-shrink-0">
+          <a href="#contact" class="px-5 py-2 rounded-full text-sm font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-lg transition transform hover:scale-105">
+            Free Exam • Book Now
+          </a>
+        </div>
 
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1 
-                });
-                
-                fadeElements.forEach(el => {
-                    observer.observe(el);
-                });
-            } else {
-                fadeElements.forEach(el => {
-                    el.classList.add('visible');
-                });
-            }
-            
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (!link.parentElement.querySelector('.submenu')) {
-                         menuToggle.click();
-                    }
-                });
-            });
+        <div class="lg:hidden">
+          <button id="menu-toggle" type="button" class="inline-flex items-center justify-center p-2 rounded-md hover:text-[var(--accent)] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--accent)]" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      </div>
 
-            const videoModalOverlay = document.getElementById('video-modal-overlay');
-            const videoModalIframe = document.getElementById('video-modal-iframe');
-            const videoModalClose = document.getElementById('video-modal-close');
-            const videoThumbnailButtons = document.querySelectorAll('.video-thumbnail-button');
+      <div class="lg:hidden hidden" id="mobile-menu">
+        <ul class="absolute top-full left-0 w-full bg-white shadow-lg py-2 max-h-[calc(100vh-120px)] overflow-y-auto">
+          <li><a href="#steps" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Your Journey</a></li>
+          <li><a href="#technology" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Our Technology</a></li>
+          <li><a href="#expertise" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Why EyeSTAR</a></li>
+          <li><a href="#patients" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">The Patients</a></li>
+          <li><a href="#faq" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Your Questions</a></li>
+          <li><a href="#contact" class="block px-5 py-4 text-base font-medium text-white bg-orange-400 text-center">Free Exam • Book Now</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-            function openModal(videoId) {
-                videoModalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
-                videoModalOverlay.style.display = 'flex';
-            }
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gray-800">
+      <div class="absolute inset-0">
+        <img src="lasik-bg.jpg" alt="Modern, advanced laser eye surgery suite at EyeSTAR LASIK Institute" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/60"></div>
+      </div>
 
-            function closeModal() {
-                videoModalIframe.src = ''; 
-                videoModalOverlay.style.display = 'none';
-            }
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="text-white text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+              See the World in HD — Without Glasses or Contacts
+            </h1>
+            <p class="mt-6 text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto lg:mx-0">
+              Free LASIK candidacy consultation. Comfortable all-laser treatment, next-day check, lifetime aftercare.
+            </p>
 
-            videoThumbnailButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const videoId = button.getAttribute('data-video-id');
-                    openModal(videoId);
-                });
-            });
+            <!-- Trust row -->
+            <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-white/80">
+              <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-green-400"></span> ISO-level safety culture</span>
+              <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-green-400"></span> International patient support</span>
+              <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-green-400"></span> Advanced WaveLight® tech</span>
+            </div>
+          </div>
 
-            videoModalClose.addEventListener('click', closeModal);
-            videoModalOverlay.addEventListener('click', (e) => {
-                if (e.target === videoModalOverlay) {
-                    closeModal();
-                }
-            });
+          <!-- Lead Form (Hero) -->
+          <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-[var(--dark)] mb-6">
+              Start Your Free Consultation
+            </h2>
 
-        });
-    </script>
+            <form action="https://api.web3forms.com/submit" method="POST" id="hero-form">
+              <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75" />
+              <input type="hidden" name="subject" value="New Consultation Request from EyeSTAR Website" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <!-- UTM capture -->
+              <input type="hidden" name="utm_source" id="utm_source_h">
+              <input type="hidden" name="utm_medium" id="utm_medium_h">
+              <input type="hidden" name="utm_campaign" id="utm_campaign_h">
+              <input type="hidden" name="utm_content" id="utm_content_h">
 
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="hero-name" class="block text-sm font-medium text-gray-700">Name</label>
+                  <input type="text" name="name" id="hero-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="name">
+                </div>
+                <div>
+                  <label for="hero-surname" class="block text-sm font-medium text-gray-700">Surname</label>
+                  <input type="text" name="surname" id="hero-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="family-name">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="hero-email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                  <input type="email" name="email" id="hero-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="email">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="hero-phone" class="block text-sm font-medium text-gray-700">Telephone Number</label>
+                  <input type="tel" name="phone" id="hero-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" inputmode="tel" autocomplete="tel">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="hero-message" class="block text-sm font-medium text-gray-700">Message (optional)</label>
+                  <textarea name="message" id="hero-message" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" placeholder="Tell us about your vision goals or preferred dates"></textarea>
+                </div>
+
+                <!-- Quick checkboxes -->
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">What is your vision problem? (Check all that apply)</label>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 text-sm">
+                    <label for="chk-myopia" class="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" name="vision_problem[]" value="Myopia" id="chk-myopia" class="form-checkbox"> Myopia (Nearsightedness)
+                    </label>
+                    <label for="chk-hypermetropia" class="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" name="vision_problem[]" value="Hyperopia" id="chk-hypermetropia" class="form-checkbox"> Hyperopia (Farsightedness)
+                    </label>
+                    <label for="chk-astigmatism" class="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" name="vision_problem[]" value="Astigmatism" id="chk-astigmatism" class="form-checkbox"> Astigmatism
+                    </label>
+                    <label for="chk-presbyopia" class="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" name="vision_problem[]" value="Presbyopia" id="chk-presbyopia" class="form-checkbox"> Presbyopia (Aging Eyes)
+                    </label>
+                    <label for="chk-other" class="flex items-center gap-2 cursor-pointer">
+                      <input type="checkbox" name="vision_problem[]" value="Other" id="chk-other" class="form-checkbox"> Other / Not Sure
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <button type="submit" class="w-full py-3 px-6 rounded-lg shadow-sm text-base font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)] transition transform hover:scale-[1.01]">
+                  Check My Candidacy (Free)
+                </button>
+              </div>
+              <p class="text-xs text-gray-500 text-center mt-3">We’ll respond within 24 hours. No obligation.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section id="steps" class="py-16 sm:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Your Journey to Clear Vision</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Three simple steps — we guide you at every moment.</p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-3 gap-8">
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+            <img class="w-full h-48 object-cover" src="s1.png" alt="Step 1: Comprehensive eye exam at EyeSTAR" />
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold">Step 1 — Free Exam</h3>
+              <p class="mt-3 text-base text-gray-600 flex-grow">Comprehensive, no-obligation consultation to confirm your candidacy.</p>
+              <a href="#contact" class="inline-block mt-6 px-6 py-3 rounded-lg font-medium text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md transition text-center">Book Free Exam</a>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+            <img class="w-full h-48 object-cover" src="s2.png" alt="Step 2: All-laser LASIK treatment in Istanbul" />
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold">Step 2 — All-Laser LASIK</h3>
+              <p class="mt-3 text-base text-gray-600 flex-grow">Comfortable, precise, and fast. Your procedure typically takes minutes per eye.</p>
+              <a href="#technology" class="inline-block mt-6 px-6 py-3 rounded-lg font-medium text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md transition text-center">See Our Tech</a>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+            <img class="w-full h-48 object-cover" src="s3.png" alt="Step 3: Next-day post-op check and aftercare" />
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold">Step 3 — Next-Day Check</h3>
+              <p class="mt-3 text-base text-gray-600 flex-grow">We see you the next day to celebrate your new vision and review care.</p>
+              <a href="#patients" class="inline-block mt-6 px-6 py-3 rounded-lg font-medium text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md transition text-center">Watch Results</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="technology" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Pioneering Technology for Unmatched Precision</h2>
+            <p class="mt-6 text-lg text-gray-600">
+              We use advanced, FDA-approved laser systems designed for precision, speed, and safety — including WaveLight® EX500 and wavefront-optimized planning.
+            </p>
+            <ul class="mt-6 space-y-4 text-gray-600 no-bullets">
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-[var(--accent)] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><b>Fast Treatment:</b> Shorter laser time enhances comfort.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-[var(--accent)] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><b>Accurate Results:</b> Multi-dimensional eye tracking follows tiny movements.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-[var(--accent)] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span><b>Customized Planning:</b> Wavefront-optimized profiles preserve corneal optics.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="fade-in items-center justify-center mx-auto">
+            <img src="509952_470291.png" alt="WaveLight EX500 LASIK technology used at EyeSTAR" class="rounded-xl shadow-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="py-16 sm:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Expertise You Can Trust, Results You Will Love</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Patients from around the world trust EyeSTAR with their sight — supported by an experienced surgical team and meticulous safety protocols.</p>
+        </div>
+        <div class="mt-16 grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in grid grid-cols-2 gap-4">
+            <img src="865481_8077.jpeg" alt="Lead surgeon during pre-op discussion at EyeSTAR" class="rounded-xl shadow-xl aspect-[4/5] object-cover" />
+            <img src="975838_55950.jpeg" alt="Bowl of glasses from patients who no longer need them" class="rounded-xl shadow-xl aspect-[4/5] object-cover mt-8" />
+          </div>
+          <div class="fade-in">
+            <h3 class="text-2xl font-bold">A Legacy of Life-Changing Results</h3>
+            <p class="mt-4 text-gray-600">Every patient receives a tailored treatment plan for their eyes and lifestyle, with careful pre-op mapping and post-op follow-up.</p>
+            <p class="mt-4 text-gray-600">The “glasses bowl” symbolizes new freedom: people waking up to a clear world, free from daily eyewear hassle.</p>
+            <div class="mt-6">
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md">Get My Free Exam</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patients -->
+    <section id="patients" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What Our Patients Say</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Real stories. Real outcomes.</p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Keep your original video cards and ids -->
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="W6XFU13Bwug">
+              <img src="https://img.youtube.com/vi/W6XFU13Bwug/hqdefault.jpg" alt="Patient Nick shares next-day LASIK experience" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">“Life-changing is an understatement!”</h4>
+              <p class="mt-2 text-base text-gray-700">“Everything was wonderful and now it is the next day and I can see!”</p>
+              <p class="mt-4 text-sm font-semibold">— Nick (USA)</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="Yq66j76J-L0">
+              <img src="https://img.youtube.com/vi/Yq66j76J-L0/hqdefault.jpg" alt="Patient Francis shares long-term outcome after LASIK" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">“The team was incredibly professional.”</h4>
+              <p class="mt-2 text-base text-gray-700">“I’ll be forever grateful that EyeSTAR helped me get rid of glasses I wore for 15 years.”</p>
+              <p class="mt-4 text-sm font-semibold">— Francis (Canada)</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="5E9hqW_doSs">
+              <img src="https://img.youtube.com/vi/5E9hqW_doSs/hqdefault.jpg" alt="German couple Holger and Claudia share LASIK experience" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">“My only regret? Not doing it sooner.”</h4>
+              <p class="mt-2 text-base text-gray-700">“We are very pleased with the results.”</p>
+              <p class="mt-4 text-sm font-semibold">— Holger & Claudia (Germany)</p>
+            </div>
+          </div>
+
+          <!-- Keep your other two cards as-is or add more -->
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="8-SG8vdcPWA">
+              <img src="https://img.youtube.com/vi/8-SG8vdcPWA/hqdefault.jpg" alt="Patient Sheba reports astigmatism gone after LASIK" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">“Astigmatism is completely gone.”</h4>
+              <p class="mt-2 text-base text-gray-700">“EyeSTAR, you’re amazing.”</p>
+              <p class="mt-4 text-sm font-semibold">— Sheba (Uganda)</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="bCrnK_hA-gI">
+              <img src="https://img.youtube.com/vi/bCrnK_hA-gI/hqdefault.jpg" alt="Bulgarian twins share their referral story to EyeSTAR" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">“We traveled for the procedure.”</h4>
+              <p class="mt-2 text-base text-gray-700">“We’ll tell all our friends — we came through a recommendation.”</p>
+              <p class="mt-4 text-sm font-semibold">— Mario & Viktor (Bulgaria)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 sm:py-24 bg-gray-50">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Your Questions, Answered</h2>
+          <p class="mt-4 text-lg text-gray-600">Quick answers to common concerns.</p>
+        </div>
+
+        <div class="mt-12 space-y-4" id="faq-container">
+          <!-- Each panel -->
+          <div class="fade-in bg-white rounded-lg shadow-md">
+            <button class="faq-question w-full flex justify-between items-center text-left p-5">
+              <span class="text-lg font-semibold">Is the LASIK procedure painful?</span>
+              <svg class="faq-arrow h-6 w-6 text-[var(--accent)] transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden px-5">
+              <p class="py-5 text-base text-gray-600 border-t border-gray-200">No — we use anesthetic drops to fully numb the eyes. You may feel light pressure for a few seconds.</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-lg shadow-md">
+            <button class="faq-question w-full flex justify-between items-center text-left p-5">
+              <span class="text-lg font-semibold">How long is recovery?</span>
+              <svg class="faq-arrow h-6 w-6 text-[var(--accent)] transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden px-5">
+              <p class="py-5 text-base text-gray-600 border-t border-gray-200">Most people notice improvement within hours and return to work the next day. We provide simple aftercare.</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-lg shadow-md">
+            <button class="faq-question w-full flex justify-between items-center text-left p-5">
+              <span class="text-lg font-semibold">Am I a good candidate?</span>
+              <svg class="faq-arrow h-6 w-6 text-[var(--accent)] transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden px-5">
+              <p class="py-5 text-base text-gray-600 border-t border-gray-200">Typically age 18+, stable prescription, and healthy eyes. The free exam confirms candidacy and the best technique.</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-lg shadow-md">
+            <button class="faq-question w-full flex justify-between items-center text-left p-5">
+              <span class="text-lg font-semibold">What if I blink or move?</span>
+              <svg class="faq-arrow h-6 w-6 text-[var(--accent)] transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-answer max-h-0 overflow-hidden px-5">
+              <p class="py-5 text-base text-gray-600 border-t border-gray-200">We use a comfy eyelid holder; eye-tracking keeps the laser perfectly aligned with tiny movements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Schema -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Is the LASIK procedure painful?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We use anesthetic drops to fully numb the eyes; most feel only light pressure for a few seconds." }
+        },{
+          "@type": "Question",
+          "name": "How long is recovery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most people notice improvement within hours and return to work the next day." }
+        },{
+          "@type": "Question",
+          "name": "Am I a good candidate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Typically age 18+, stable prescription, and healthy eyes. A free exam confirms candidacy and the best technique." }
+        },{
+          "@type": "Question",
+          "name": "What if I blink or move?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A gentle eyelid holder and real-time eye tracking maintain alignment throughout the treatment." }
+        }]
+      }
+      </script>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ready to Take the Next Step?</h2>
+          <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Book your free consultation or ask anything — we’ll reply within 24 hours.</p>
+        </div>
+
+        <div class="mt-16 grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div class="fade-in bg-white p-6 sm:p-8 rounded-xl shadow-xl border border-gray-100">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-6">Start Your Free Consultation</h2>
+
+            <form action="https://api.web3forms.com/submit" method="POST" id="footer-form">
+              <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75" />
+              <input type="hidden" name="subject" value="New Contact Form Submission from EyeSTAR Footer" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <!-- UTM capture -->
+              <input type="hidden" name="utm_source" id="utm_source_f">
+              <input type="hidden" name="utm_medium" id="utm_medium_f">
+              <input type="hidden" name="utm_campaign" id="utm_campaign_f">
+              <input type="hidden" name="utm_content" id="utm_content_f">
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="footer-name" class="block text-sm font-medium text-gray-700">Name</label>
+                  <input type="text" name="name" id="footer-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="name">
+                </div>
+                <div>
+                  <label for="footer-surname" class="block text-sm font-medium text-gray-700">Surname</label>
+                  <input type="text" name="surname" id="footer-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="family-name">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="footer-email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                  <input type="email" name="email" id="footer-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="email">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="footer-phone" class="block text-sm font-medium text-gray-700">Telephone Number</label>
+                  <input type="tel" name="phone" id="footer-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" inputmode="tel" autocomplete="tel">
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="footer-message" class="block text-sm font-medium text-gray-700">Message (optional)</label>
+                  <textarea name="message" id="footer-message" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" placeholder="Ask any question or share your availability"></textarea>
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">What is your vision problem? (Check all that apply)</label>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 text-sm">
+                    <label for="chk-myopia-2" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" name="vision_problem[]" value="Myopia" id="chk-myopia-2" class="form-checkbox"> Myopia (Nearsightedness)</label>
+                    <label for="chk-hypermetropia-2" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" name="vision_problem[]" value="Hyperopia" id="chk-hypermetropia-2" class="form-checkbox"> Hyperopia (Farsightedness)</label>
+                    <label for="chk-astigmatism-2" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" name="vision_problem[]" value="Astigmatism" id="chk-astigmatism-2" class="form-checkbox"> Astigmatism</label>
+                    <label for="chk-presbyopia-2" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" name="vision_problem[]" value="Presbyopia" id="chk-presbyopia-2" class="form-checkbox"> Presbyopia (Aging Eyes)</label>
+                    <label for="chk-other-2" class="flex items-center gap-2 cursor-pointer"><input type="checkbox" name="vision_problem[]" value="Other" id="chk-other-2" class="form-checkbox"> Other / Not Sure</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <button type="submit" class="w-full py-3 px-6 rounded-lg shadow-sm text-base font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)] transition transform hover:scale-[1.01]">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="fade-in">
+            <h3 class="text-2xl font-bold mb-4">Visit Us</h3>
+            <p class="text-lg text-gray-600 mb-6">
+              EyeSTAR LASIK Institute<br />
+              Kocatepe Mah. Cumhuriyet Cad. Ceylan Apt. No:13/1-2<br />
+              Taksim – Beyoğlu / Türkiye
+            </p>
+            <div class="relative h-0 pb-[75%] rounded-xl shadow-xl overflow-hidden">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.289047243054!2d28.98555367676941!3d41.04093391629555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab765184be6c1%3A0x1d46a84d41a877a!2sEyeSTAR%20LASIK%20Institute!5e0!3m2!1sen!2str!4v1700055555555!5m2!1sen!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute top-0 left-0 w-full h-full"></iframe>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="tel:+902123615000" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200">
+                Call: +90 212 361 5000
+              </a>
+              <a href="https://wa.me/905415001900" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-100 hover:bg-green-200">
+                WhatsApp
+              </a>
+              <a href="mailto:info@eyestar.us" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-100 hover:bg-blue-200">
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="space-y-6">
+          <a href="#"><img class="h-16 w-auto" src="lasik-logo.png" alt="EyeSTAR LASIK Institute logo"></a>
+          <p class="text-sm text-gray-400">Leading the world in advanced vision correction.</p>
+          <div class="space-y-3">
+            <a href="tel:+902123615000" class="flex items-center gap-3 text-sm hover:text-[var(--accent)] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>+90 212 361 5000</span>
+            </a>
+            <a href="https://wa.me/905415001900" class="flex items-center gap-3 text-sm hover:text-[var(--accent)] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+              <span>+90 541 500 1900</span>
+            </a>
+            <a href="mailto:info@eyestar.us" class="flex items-center gap-3 text-sm hover:text-[var(--accent)] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>info@eyestar.us</span>
+            </a>
+          </div>
+        </div>
+
+        <div></div>
+      </div>
+
+      <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between">
+        <p class="text-sm text-gray-400">© 2025 EyeSTAR LASIK Institute. All rights reserved.</p>
+        <div class="flex items-center gap-5 mt-4 sm:mt-0">
+          <a href="https://www.facebook.com/eyestar" class="text-gray-400 hover:text-[var(--accent)]" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+          </a>
+          <a href="https://twitter.com" class="text-gray-400 hover:text-[var(--accent)]" aria-label="Twitter/X">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.616 1.956 2.398 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lasikinistanbul/" class="text-gray-400 hover:text-[var(--accent)]" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.667 4.77-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.667 4.77 4.919 4.919 1.266-.058 1.646.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358.2 6.78-2.618 6.98-6.98.059 1.281.073 1." /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom CTA -->
+  <div id="sticky-cta" class="bg-white/95 backdrop-blur border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
+      <div class="text-sm sm:text-base font-medium text-gray-800">
+        Free LASIK Candidacy Check — limited daily slots.
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-lg text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow">
+          Book Free Exam
+        </a>
+        <a href="https://wa.me/905415001900" class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-green-500 text-white hover:brightness-110 shadow">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500 text-white shadow hover:brightness-110"
+     href="https://wa.me/905415001900" aria-label="WhatsApp chat">
+    WhatsApp • Ask a LASIK Expert
+  </a>
+
+  <!-- YouTube Channel Popup Button -->
+  <button id="youtube-popup-btn"
+          class="fixed bottom-6 right-6 z-50 bg-red-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-red-700 transition flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm12-3c0-2.761-2.239-5-5-5H7C4.239 7 2 9.239 2 12s2.239 5 5 5h10c2.761 0 5-2.239 5-5z"/></svg>
+    Watch Our Patients’ Stories
+  </button>
+
+  <!-- YouTube Popup Modal -->
+  <div id="youtube-popup" class="hidden fixed inset-0 bg-black/80 z-50 items-center justify-center">
+    <div class="wrap">
+      <iframe id="youtube-iframe" class="w-full h-full rounded-xl"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=UCL6HA5afxp-WIZcLIDv1PLQ"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <button id="youtube-close" aria-label="Close YouTube popup">&times;</button>
+    </div>
+  </div>
+
+  <!-- Existing video modal for testimonial thumbnails -->
+  <div id="video-modal-overlay">
+    <div id="video-modal-content">
+      <button id="video-modal-close" aria-label="Close video">&times;</button>
+      <iframe id="video-modal-iframe" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-icon-open');
+    const menuCloseIcon = document.getElementById('menu-icon-close');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuOpenIcon.classList.toggle('hidden');
+        menuCloseIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Reveal animations
+    const revealEls = document.querySelectorAll('.fade-in');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.parentElement.querySelector('.faq-answer');
+        const arrow = btn.querySelector('.faq-arrow');
+        const expanded = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+        document.querySelectorAll('.faq-arrow').forEach(ar => ar.style.transform = 'rotate(0deg)');
+        if (!expanded) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Sticky CTA on scroll
+    const sticky = document.getElementById('sticky-cta');
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > 240) sticky.classList.add('visible'); else sticky.classList.remove('visible');
+      lastY = y;
+    });
+
+    // Testimonial video modal (keep your IDs)
+    const videoOverlay = document.getElementById('video-modal-overlay');
+    const videoFrame = document.getElementById('video-modal-iframe');
+    const videoClose = document.getElementById('video-modal-close');
+    document.querySelectorAll('.video-thumbnail-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.videoId;
+        videoFrame.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+        videoOverlay.style.display = 'flex';
+      });
+    });
+    videoClose.addEventListener('click', () => {
+      videoOverlay.style.display = 'none';
+      videoFrame.src = '';
+    });
+
+    // YouTube Channel popup
+    const ytBtn = document.getElementById('youtube-popup-btn');
+    const ytModal = document.getElementById('youtube-popup');
+    const ytClose = document.getElementById('youtube-close');
+    ytBtn.addEventListener('click', () => ytModal.style.display = 'flex');
+    ytClose.addEventListener('click', () => {
+      ytModal.style.display = 'none';
+      // Stop video playback by resetting src
+      const iframe = document.getElementById('youtube-iframe');
+      iframe.src = iframe.src;
+    });
+    ytModal.addEventListener('click', (e) => {
+      if (e.target === ytModal) ytClose.click();
+    });
+
+    // UTM capture for both forms
+    (function captureUTM() {
+      const params = new URLSearchParams(window.location.search);
+      const fields = ['utm_source','utm_medium','utm_campaign','utm_content'];
+      fields.forEach(k => {
+        const v = params.get(k) || '';
+        const h = document.getElementById(k + '_h');
+        const f = document.getElementById(k + '_f');
+        if (h) h.value = v;
+        if (f) f.value = v;
+      });
+    })();
+  </script>
 </body>
 </html>
