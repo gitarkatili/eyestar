@@ -17,6 +17,7 @@
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/fdf810b10f.js" crossorigin="anonymous"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,6 +55,24 @@
     #youtube-popup { position:fixed; inset:0; background:rgba(0,0,0,.8); display:none; align-items:center; justify-content:center; z-index:70; }
     #youtube-popup .wrap { width:min(900px, 92vw); aspect-ratio:16/9; position:relative; }
     #youtube-close { position:absolute; top:-42px; right:0; font-size:2.25rem; color:#fff; font-weight:800; line-height:1; }
+
+    body.has-promo-bar header {
+    top: 40px !important;
+    transition: top 0.5s ease;
+    }
+
+    body.has-promo-bar {
+      padding-top: 160px;
+    }
+
+    @media (max-width: 768px) {
+    body { padding-top: 80px; }
+    body.has-promo-bar { padding-top: 120px; }
+    .focusmobile { margin-top: 75px; }
+    input, textarea, select { font-size: 16px !important; }
+    }
+
+    .font-mono { font-family: 'Courier New', Courier, monospace; }
   </style>
 
   <!-- JSON-LD: MedicalClinic w/ ContactPoint -->
@@ -83,7 +102,65 @@
   }
   </script>
 </head>
+<div id="top-promo-bar" class="hidden fixed top-0 left-0 w-full z-[60] bg-[var(--accent)] text-white shadow-md transition-transform duration-500 -translate-y-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between text-xs sm:text-sm">
+    
+    <div class="flex items-center gap-2 truncate">
+      <span class="font-bold bg-white/20 px-2 py-0.5 rounded">LAST CHANCE</span>
+      <span class="hidden sm:inline">Don't miss out on exclusive Rewards Program offers!</span>
+    </div>
 
+    <div class="flex items-center gap-3 font-mono font-bold">
+      <div class="flex gap-1"><span class="timer-days">00</span>g</div>
+      <div class="flex gap-1"><span class="timer-hours">00</span>s</div>
+      <div class="flex gap-1"><span class="timer-minutes">00</span>dk</div>
+      <div class="flex gap-1"><span class="timer-seconds">00</span>sn</div>
+      
+      <a href="rewards/index.html" class="ml-2 bg-white text-[var(--accent)] px-3 py-1 rounded-full text-xs font-bold hover:bg-gray-100 transition">
+        View
+      </a>
+    </div>
+  </div>
+</div>
+<div id="rewards-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4 fade-in">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" id="rewards-backdrop"></div>
+  
+  <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 text-center transform transition-all scale-95 opacity-0" id="rewards-content">
+    <button id="rewards-close" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </button>
+
+    <div class="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-500 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    </div>
+
+    <h3 class="text-2xl font-bold text-gray-800 mb-1">Rewards Program Ending Soon!</h3>
+    <p class="text-sm text-gray-600 mb-6">The deadline for exclusive discounts and privileges is January 31st.<br>Don't miss this opportunity.<</p>
+
+    <div class="grid grid-cols-4 gap-2 mb-6 text-center">
+      <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">
+        <span id="cd-days" class="block text-2xl font-bold text-[var(--accent)]">00</span>
+        <span class="text-[10px] uppercase text-gray-500 font-semibold">Gün</span>
+      </div>
+      <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">
+        <span id="cd-hours" class="block text-2xl font-bold text-[var(--accent)]">00</span>
+        <span class="text-[10px] uppercase text-gray-500 font-semibold">Saat</span>
+      </div>
+      <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">
+        <span id="cd-minutes" class="block text-2xl font-bold text-[var(--accent)]">00</span>
+        <span class="text-[10px] uppercase text-gray-500 font-semibold">Dk</span>
+      </div>
+      <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">
+        <span id="cd-seconds" class="block text-2xl font-bold text-[var(--accent)]">00</span>
+        <span class="text-[10px] uppercase text-gray-500 font-semibold">Sn</span>
+      </div>
+    </div>
+
+    <a href="rewards/index.html" class="block w-full py-3 px-6 rounded-lg bg-orange-500 text-white font-bold hover:bg-orange-600 transition shadow-lg transform active:scale-95">
+      View Benefits
+    </a>
+  </div>
+</div>
 <body class="bg-white text-[var(--dark)]">
   <!-- Top utility bar -->
   <header class="fixed top-0 left-0 w-full z-50">
@@ -132,6 +209,8 @@
             <li><a href="#expertise" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Why EyeSTAR</a></li>
             <li><a href="#patients" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">The Patients</a></li>
             <li><a href="#faq" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Your Questions</a></li>
+            <li><a href="rewards/index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100 hover:text-[var(--accent)] transition">Rewards Program <i class="fa fa-clock-o" aria-hidden="true"></i>
+</a></li>
           </ul>
         </div>
 
@@ -173,8 +252,8 @@
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="text-white text-center lg:text-left">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+          <div class="text-white text-center lg:text-left focusmobile">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight seetheworld">
               See the World in HD — Without Glasses or Contacts
             </h1>
             <p class="mt-6 text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto lg:mx-0">
@@ -790,6 +869,122 @@
         if (f) f.value = v;
       });
     })();
+
+    const elements = {
+    popup: document.getElementById('rewards-modal'),
+    popupContent: document.getElementById('rewards-content'),
+    topBar: document.getElementById('top-promo-bar'),
+    closeBtn: document.getElementById('rewards-close'),
+    backdrop: document.getElementById('rewards-backdrop'),
+    body: document.body
+  };
+
+  // Ziyaretçi Durum Kontrolü (localStorage)
+  const hasSeenPopup = localStorage.getItem('eyestar_rewards_seen');
+
+  // Başlatıcı Fonksiyon
+  function initRewards() {
+    startCountdown(); // Sayacı hemen başlat
+
+    if (hasSeenPopup === 'true') {
+      // Daha önce görmüşse -> Direkt Top Bar'ı aç
+      showTopBar();
+    } else {
+      // İlk ziyaretse -> 2 saniye sonra Popup aç
+      setTimeout(openPopup, 2000);
+    }
+  }
+
+  // Popup Açma
+  function openPopup() {
+    elements.popup.classList.remove('hidden');
+    elements.popup.classList.add('flex');
+    setTimeout(() => {
+      elements.popupContent.classList.remove('scale-95', 'opacity-0');
+      elements.popupContent.classList.add('scale-100', 'opacity-100');
+    }, 50);
+  }
+
+  // Popup Kapatma ve Top Bar'a Geçiş
+  function closePopupAndMoveToTop() {
+    // Popup animasyonla gizle
+    elements.popupContent.classList.remove('scale-100', 'opacity-100');
+    elements.popupContent.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+      elements.popup.classList.add('hidden');
+      elements.popup.classList.remove('flex');
+      
+      // Top Bar'ı göster
+      showTopBar();
+      
+      // Kaydet: Artık bu kullanıcı popup'ı gördü
+      localStorage.setItem('eyestar_rewards_seen', 'true');
+    }, 300);
+  }
+
+  // Top Bar Gösterme
+  function showTopBar() {
+    elements.topBar.classList.remove('hidden');
+    // Tarayıcının "hidden"ı kaldırdığını algılaması için minik gecikme
+    setTimeout(() => {
+        elements.topBar.classList.remove('-translate-y-full'); // Aşağı kaydır
+        elements.body.classList.add('has-promo-bar'); // Body ve Header'ı aşağı it
+    }, 10);
+  }
+
+  // Event Listeners
+  if(elements.closeBtn) elements.closeBtn.addEventListener('click', closePopupAndMoveToTop);
+  if(elements.backdrop) elements.backdrop.addEventListener('click', closePopupAndMoveToTop);
+
+  // Sayaç Mantığı (Her iki sayacı da günceller)
+  function startCountdown() {
+    const now = new Date();
+    let targetYear = now.getFullYear();
+    const currentMonth = now.getMonth(); 
+    const currentDay = now.getDate();
+
+    // 31 Ocak mantığı (Geçtiyse seneye)
+    if (currentMonth > 0 || (currentMonth === 0 && currentDay > 31)) {
+        targetYear += 1;
+    }
+    const targetDate = new Date(`January 31, ${targetYear} 23:59:59`).getTime();
+
+    // DOM Elemanlarını Seç (Class kullanarak hepsini seçiyoruz)
+    const elDays = document.querySelectorAll('#cd-days, .timer-days');
+    const elHours = document.querySelectorAll('#cd-hours, .timer-hours');
+    const elMins = document.querySelectorAll('#cd-minutes, .timer-minutes');
+    const elSecs = document.querySelectorAll('#cd-seconds, .timer-seconds');
+
+    const updateText = (nodeList, value) => {
+        const valStr = value < 10 ? "0" + value : value;
+        nodeList.forEach(el => el.innerText = valStr);
+    };
+
+    const timerInterval = setInterval(() => {
+        const currentTime = new Date().getTime();
+        const distance = targetDate - currentTime;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        updateText(elDays, days);
+        updateText(elHours, hours);
+        updateText(elMins, minutes);
+        updateText(elSecs, seconds);
+
+    }, 1000);
+  }
+
+  // Sistemi başlat
+  initRewards();
   </script>
 </body>
 </html>
