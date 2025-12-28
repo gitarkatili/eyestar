@@ -8,18 +8,18 @@
   <meta name="description" content="See clearly without glasses or contacts. Free LASIK candidacy consultation at EyeSTAR LASIK Institute, Taksim. All-laser technology, expert surgeons, international patient support." />
   <meta name="keywords" content="LASIK Istanbul, laser eye surgery Turkey, Z-LASIK, PRK, Contoura Vision, EyeSTAR" />
 
-  <!-- Open Graph -->
+  
   <meta property="og:title" content="EyeSTAR LASIK Institute — Advanced Laser Eye Surgery in Istanbul" />
   <meta property="og:description" content="See clearly without glasses or contacts. Free LASIK candidacy consultation. All-laser technology, expert surgeons, international patient support." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="lasik-bg.jpg" />
   <meta property="og:url" content="https://www.eyestar.us/" />
 
-  <!-- Tailwind -->
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/fdf810b10f.js" crossorigin="anonymous"></script>
 
-  <!-- Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -30,7 +30,7 @@
       --accent-hover: #ea580c;
       --dark: #1a1a1a;
     }
-    body { font-family: 'Inter', sans-serif; padding-top: 120px; }
+    body { font-family: 'Inter', sans-serif; }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
     .fade-in.visible { opacity:1; transform:translateY(0); }
     .form-checkbox { appearance:none; -webkit-appearance:none; height:1.25rem; width:1.25rem; border:2px solid #d1d5db; border-radius:.25rem; position:relative; cursor:pointer; }
@@ -43,10 +43,19 @@
     #video-modal-content { position:relative; width:90%; max-width:960px; height:0; padding-bottom:50.625%; background:#000; border-radius:.5rem; box-shadow:0 10px 25px rgba(0,0,0,.5); }
     #video-modal-iframe { position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:.5rem; }
     #video-modal-close { position:absolute; top:-40px; right:0; width:32px; height:32px; color:#fff; background:transparent; border:none; font-size:2.5rem; font-weight:bold; cursor:pointer; line-height:.5; }
-
-    /* Sticky bottom CTA bar (appears after scroll) */
-    #sticky-cta { position:fixed; left:0; right:0; bottom:-120px; transition:bottom .3s ease; z-index:60; }
-    #sticky-cta.visible { bottom:0; }
+#sticky-cta { 
+      position: fixed; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      transform: translateY(100%);
+      transition: transform 0.3s ease; 
+      z-index: 60; 
+    }
+    
+    #sticky-cta.visible { 
+      transform: translateY(0); 
+    }
 
     /* Floating WhatsApp */
     .wa-float { position:fixed; right:1rem; bottom:5.5rem; z-index:60; }
@@ -70,12 +79,13 @@
     body.has-promo-bar { padding-top: 120px; }
     .focusmobile { margin-top: 75px; }
     input, textarea, select { font-size: 16px !important; }
+  
     }
 
     .font-mono { font-family: 'Courier New', Courier, monospace; }
   </style>
 
-  <!-- JSON-LD: MedicalClinic w/ ContactPoint -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -162,7 +172,7 @@
   </div>
 </div>
 <body class="bg-white text-[var(--dark)]">
-  <!-- Top utility bar -->
+  
   <header class="fixed top-0 left-0 w-full z-50">
     <div id="top-bar" class="bg-white text-[var(--dark)] h-10 shadow-sm">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -195,7 +205,7 @@
       </div>
     </div>
 
-    <!-- Main nav -->
+    
     <nav id="main-nav" class="bg-white shadow-md h-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <div class="flex-shrink-0">
@@ -216,7 +226,7 @@
 
         <div class="hidden lg:flex items-center flex-shrink-0">
           <a href="#contact" class="px-5 py-2 rounded-full text-sm font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-lg transition transform hover:scale-105">
-            Free Exam • Book Now
+            Free Online Consultation • Book Now
           </a>
         </div>
 
@@ -237,14 +247,14 @@
           <li><a href="#patients" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">The Patients</a></li>
           <li><a href="#faq" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Your Questions</a></li>
           <li><a href="rewards/index.html" class="block px-5 py-3 text-base font-medium hover:bg-gray-100 hover:text-[var(--accent)]">Rewards Program <i class="fa fa-clock-o" aria-hidden="true"></i></a></li>
-          <li><a href="#contact" class="block px-5 py-4 text-base font-medium text-white bg-orange-400 text-center">Free Exam • Book Now</a></li>
+          <li><a href="#contact" class="block px-5 py-4 text-base font-medium text-white bg-orange-400 text-center">Free Online Consultation • Book Now</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
+    
     <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gray-800">
       <div class="absolute inset-0">
         <img src="lasik-bg.jpg" alt="Modern, advanced laser eye surgery suite at EyeSTAR LASIK Institute" class="w-full h-full object-cover">
@@ -255,13 +265,13 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="text-white text-center lg:text-left focusmobile">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight seetheworld">
-              See the World in HD — Without Glasses or Contacts
+              See the World in HD, Without Glasses or Contacts
             </h1>
             <p class="mt-6 text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto lg:mx-0">
               Free LASIK candidacy consultation. Comfortable all-laser treatment, next-day check, lifetime aftercare.
             </p>
 
-            <!-- Trust row -->
+            
             <div class="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-white/80">
               <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-green-400"></span> ISO-level safety culture</span>
               <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-green-400"></span> International patient support</span>
@@ -269,7 +279,7 @@
             </div>
           </div>
 
-          <!-- Lead Form (Hero) -->
+          
           <div class="bg-white p-6 sm:p-8 rounded-xl shadow-2xl">
             <h2 class="text-2xl sm:text-3xl font-bold text-center text-[var(--dark)] mb-6">
               Start Your Free Consultation
@@ -279,7 +289,7 @@
               <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75" />
               <input type="hidden" name="subject" value="New Consultation Request from EyeSTAR Website" />
               <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-              <!-- UTM capture -->
+              
               <input type="hidden" name="utm_source" id="utm_source_h">
               <input type="hidden" name="utm_medium" id="utm_medium_h">
               <input type="hidden" name="utm_campaign" id="utm_campaign_h">
@@ -288,26 +298,26 @@
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label for="hero-name" class="block text-sm font-medium text-gray-700">Name</label>
-                  <input type="text" name="name" id="hero-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="name">
+                  <input type="text" name="name" id="hero-name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="name" placeholder="Name">
                 </div>
                 <div>
                   <label for="hero-surname" class="block text-sm font-medium text-gray-700">Surname</label>
-                  <input type="text" name="surname" id="hero-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="family-name">
+                  <input type="text" name="surname" id="hero-surname" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="family-name" placeholder="Surname">
                 </div>
                 <div class="sm:col-span-2">
                   <label for="hero-email" class="block text-sm font-medium text-gray-700">E-mail</label>
-                  <input type="email" name="email" id="hero-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="email">
+                  <input type="email" name="email" id="hero-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" autocomplete="email" placeholder="your@mail.com">
                 </div>
                 <div class="sm:col-span-2">
                   <label for="hero-phone" class="block text-sm font-medium text-gray-700">Telephone Number</label>
-                  <input type="tel" name="phone" id="hero-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" inputmode="tel" autocomplete="tel">
+                  <input type="tel" name="phone" id="hero-phone" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" inputmode="tel" autocomplete="tel" placeholder="0 (555) 555 55 55">
                 </div>
                 <div class="sm:col-span-2">
                   <label for="hero-message" class="block text-sm font-medium text-gray-700">Message (optional)</label>
                   <textarea name="message" id="hero-message" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[var(--accent)] focus:border-[var(--accent)]" placeholder="Tell us about your vision goals or preferred dates"></textarea>
                 </div>
 
-                <!-- Quick checkboxes -->
+                
                 <div class="sm:col-span-2">
                   <label class="block text-sm font-medium text-gray-700 mb-2">What is your vision problem? (Check all that apply)</label>
                   <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-600 text-sm">
@@ -342,7 +352,7 @@
       </div>
     </section>
 
-    <!-- Steps -->
+    
     <section id="steps" class="py-16 sm:py-24 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -354,9 +364,9 @@
           <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
             <img class="w-full h-48 object-cover" src="s1.png" alt="Step 1: Comprehensive eye exam at EyeSTAR" />
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-2xl font-bold">Step 1 — Free Exam</h3>
+              <h3 class="text-2xl font-bold">Step 1 — free online consultation</h3>
               <p class="mt-3 text-base text-gray-600 flex-grow">Comprehensive, no-obligation consultation to confirm your candidacy.</p>
-              <a href="#contact" class="inline-block mt-6 px-6 py-3 rounded-lg font-medium text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md transition text-center">Book Free Exam</a>
+              <a href="#contact" class="inline-block mt-6 px-6 py-3 rounded-lg font-medium text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md transition text-center">Book Free Online Cnsultation</a>
             </div>
           </div>
 
@@ -381,7 +391,7 @@
       </div>
     </section>
 
-    <!-- Technology -->
+    
     <section id="technology" class="py-16 sm:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -412,7 +422,7 @@
       </div>
     </section>
 
-    <!-- Expertise -->
+    
     <section id="expertise" class="py-16 sm:py-24 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -429,14 +439,134 @@
             <p class="mt-4 text-gray-600">Every patient receives a tailored treatment plan for their eyes and lifestyle, with careful pre-op mapping and post-op follow-up.</p>
             <p class="mt-4 text-gray-600">The “glasses bowl” symbolizes new freedom: people waking up to a clear world, free from daily eyewear hassle.</p>
             <div class="mt-6">
-              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md">Get My Free Exam</a>
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow-md">Get My free online consultation</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Patients -->
+    <section id="sports-vision" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in order-2 md:order-1">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wide">Performance</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--dark)]">
+              Into sports? Our custom LASER treatment will be your legal doping!
+            </h2>
+            <p class="mt-4 text-lg text-gray-600">
+              Visual acuity is the backbone of sports performance. Scientific evidence shows that better vision leads to faster decisions, fewer injuries and greater success.
+            </p>
+            
+            <div class="mt-8 space-y-6">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-[var(--accent)] text-white">
+                    <i class="fa-solid fa-trophy text-lg"></i>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-[var(--dark)]">Vision fit for champions</h4>
+                  <p class="mt-1 text-gray-600">After LASIK, improved depth perception, enhanced hand–eye coordination and quicker reaction times make tracking balls, judging distances and responding to sudden movements easier.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-[var(--accent)] text-white">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-[var(--dark)]">Expanded peripheral vision and safety</h4>
+                  <p class="mt-1 text-gray-600">Removing glasses widens your field of view, allowing you to see teammates, opponents and playing space simultaneously; it also lowers the risk of eye injuries in collisions.</p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <div class="flex items-center justify-center h-10 w-10 rounded-md bg-[var(--accent)] text-white">
+                    <i class="fa-solid fa-microscope text-lg"></i>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-[var(--dark)]">Cutting‑edge laser technology</h4>
+                  <p class="mt-1 text-gray-600">EyeSTAR’s LASIK and refractive surgery methods reshape the cornea with precision to correct myopia, hyperopia and astigmatism, markedly improving your visual acuity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <a href="#contact" class="inline-flex items-center text-[var(--accent)] font-semibold hover:text-[var(--accent-hover)] transition">
+                Get your athlete assessment <span aria-hidden="true" class="ml-2">→</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="fade-in order-1 md:order-2 relative">
+            <div class="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-transparent rounded-2xl"></div>
+            <img src="https://images.pexels.com/photos/6620332/pexels-photo-6620332.jpeg?auto=format&fit=crop&q=80&w=1000" alt="Athlete performance" class="rounded-2xl shadow-2xl w-full h-80 md:h-auto object-cover object-top transform md:rotate-2 hover:rotate-0 transition duration-500" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="night-vision" class="py-16 sm:py-24 bg-gray-900 text-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-[var(--accent)] rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          
+          <div class="fade-in">
+             <img src="https://images.pexels.com/photos/35351641/pexels-photo-35351641.jpeg" alt="Clear night vision city view" class="rounded-xl shadow-2xl border border-gray-700" />
+            <p class="mt-4 text-sm text-gray-400 italic text-center">Simulated view</p>
+          </div>
+
+          <div class="fade-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Enhanced Night‑Vision Quality
+            </h2>
+            <p class="mt-6 text-lg text-gray-300">
+              Early‑morning practices and late‑evening games demand clear sight in low light. LASIK can reduce glare and halos and improve night vision—a crucial advantage for athletes who play at night or in dim venues.
+            </p>
+
+            <ul class="mt-8 space-y-5">
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-[var(--accent)] mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                <div>
+                  <h5 class="text-xl font-bold text-white">Reduce Glare & Halos</h5>
+                  <p class="mt-2 text-gray-400 text-sm">The procedure reduces glare and halos and improves night vision, providing clear sight in dim environments.</p>
+                </div>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-[var(--accent)] mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                <div>
+                  <h5 class="text-xl font-bold text-white">Safety & Confidence</h5>
+                  <p class="mt-2 text-gray-400 text-sm">For runners, improved night vision makes it easier to navigate dark trails or streets, enhancing safety and confidence.</p>
+                </div>
+              </li>
+            </ul>
+
+            <p class="mt-6 text-base text-[var(--accent)] font-medium">
+              With EyeSTAR, you won’t just see better during the day—you’ll also have sharper, more dependable vision when the sun goes down.
+            </p>
+
+            <div class="mt-8">
+              <a href="#contact" class="px-8 py-3 rounded-lg font-bold text-white bg-orange-500 hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">
+                Book Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
     <section id="patients" class="py-16 sm:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -445,7 +575,7 @@
         </div>
 
         <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Keep your original video cards and ids -->
+          
           <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
             <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="W6XFU13Bwug">
               <img src="https://img.youtube.com/vi/W6XFU13Bwug/hqdefault.jpg" alt="Patient Nick shares next-day LASIK experience" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
@@ -488,7 +618,7 @@
             </div>
           </div>
 
-          <!-- Keep your other two cards as-is or add more -->
+          
           <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
             <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="8-SG8vdcPWA">
               <img src="https://img.youtube.com/vi/8-SG8vdcPWA/hqdefault.jpg" alt="Patient Sheba reports astigmatism gone after LASIK" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
@@ -500,6 +630,20 @@
               <h4 class="text-xl font-bold text-orange-500">“Astigmatism is completely gone.”</h4>
               <p class="mt-2 text-base text-gray-700">“EyeSTAR, you’re amazing.”</p>
               <p class="mt-4 text-sm font-semibold">— Sheba (Uganda)</p>
+            </div>
+          </div>
+
+          <div class="fade-in bg-white rounded-xl shadow-lg overflow-hidden">
+            <button class="video-thumbnail-button w-full relative h-0 pb-[56.25%]" data-video-id="4R98Q5kG--w">
+              <img src="https://img.youtube.com/vi/4R98Q5kG--w/hqdefault.jpg" alt="Patient Sheba reports astigmatism gone after LASIK" class="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl" />
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition rounded-t-xl">
+                <svg class="h-16 w-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              </div>
+            </button>
+            <div class="p-6">
+              <h4 class="text-xl font-bold text-orange-500">"I'm out of glasses today.”</h4>
+              <p class="mt-2 text-base text-gray-700">"The followup and communication was really good.”</p>
+              <p class="mt-4 text-sm font-semibold">— Brandt (Jamaica)</p>
             </div>
           </div>
 
@@ -520,7 +664,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    
     <section id="faq" class="py-16 sm:py-24 bg-gray-50">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -529,7 +673,7 @@
         </div>
 
         <div class="mt-12 space-y-4" id="faq-container">
-          <!-- Each panel -->
+          
           <div class="fade-in bg-white rounded-lg shadow-md">
             <button class="faq-question w-full flex justify-between items-center text-left p-5">
               <span class="text-lg font-semibold">Is the LASIK procedure painful?</span>
@@ -556,7 +700,7 @@
               <svg class="faq-arrow h-6 w-6 text-[var(--accent)] transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div class="faq-answer max-h-0 overflow-hidden px-5">
-              <p class="py-5 text-base text-gray-600 border-t border-gray-200">Typically age 18+, stable prescription, and healthy eyes. The free exam confirms candidacy and the best technique.</p>
+              <p class="py-5 text-base text-gray-600 border-t border-gray-200">Typically age 18+, stable prescription, and healthy eyes. The free online consultation confirms candidacy and the best technique.</p>
             </div>
           </div>
 
@@ -572,7 +716,7 @@
         </div>
       </div>
 
-      <!-- FAQ Schema -->
+      
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -588,7 +732,7 @@
         },{
           "@type": "Question",
           "name": "Am I a good candidate?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Typically age 18+, stable prescription, and healthy eyes. A free exam confirms candidacy and the best technique." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Typically age 18+, stable prescription, and healthy eyes. A free online consultation confirms candidacy and the best technique." }
         },{
           "@type": "Question",
           "name": "What if I blink or move?",
@@ -598,7 +742,7 @@
       </script>
     </section>
 
-    <!-- Contact -->
+    
     <section id="contact" class="py-16 sm:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -614,7 +758,7 @@
               <input type="hidden" name="access_key" value="539c1c98-50e0-4c94-be83-a988ee5e7a75" />
               <input type="hidden" name="subject" value="New Contact Form Submission from EyeSTAR Footer" />
               <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-              <!-- UTM capture -->
+              
               <input type="hidden" name="utm_source" id="utm_source_f">
               <input type="hidden" name="utm_medium" id="utm_medium_f">
               <input type="hidden" name="utm_campaign" id="utm_campaign_f">
@@ -690,7 +834,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  
   <footer class="bg-[#1a1a1a] text-gray-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -733,37 +877,43 @@
     </div>
   </footer>
 
-  <!-- Sticky Bottom CTA -->
-  <div id="sticky-cta" class="bg-white/95 backdrop-blur border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
-      <div class="text-sm sm:text-base font-medium text-gray-800">
+<div id="sticky-cta" class="bg-white/95 backdrop-blur border-t border-gray-200 z-[60]">
+    
+    <div class="block sm:hidden p-2">
+      <div class="flex flex-col gap-2">
+        <p class="text-gray-600 text-sm text-center font-medium">
+          <span class="text-[var(--accent)] font-bold">Limited Offer:</span> Free consultation ends soon!
+        </p>
+        <a href="#contact" class="w-full py-3 bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white text-center font-bold rounded-xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-calendar-check"></i>
+          Book Free Online Consultation
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden sm:flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 items-center justify-between gap-3">
+      <div class="text-base font-medium text-gray-800">
         Free LASIK Candidacy Check — limited daily slots.
       </div>
       <div class="flex items-center gap-2">
-        <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-lg text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow">
-          Book Free Exam
+        <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-full text-white bg-orange-400 hover:bg-[var(--accent-hover)] shadow transition">
+          Book Free Online Consultation
         </a>
-        <a href="https://wa.me/905415001900" class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-green-500 text-white hover:brightness-110 shadow">
+        <a href="https://wa.me/905415001900" class="inline-flex items-center px-4 py-2 rounded-full bg-green-500 text-white hover:brightness-110 shadow transition">
           WhatsApp
         </a>
       </div>
     </div>
-  </div>
 
-  <!-- Floating WhatsApp -->
-  <a class="wa-float inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500 text-white shadow hover:brightness-110"
-     href="https://wa.me/905415001900" aria-label="WhatsApp chat">
-    WhatsApp • Ask a LASIK Expert
-  </a>
-
-  <!-- YouTube Channel Popup Button -->
+  </div><div class="floatingwhatsappyt">
+  
   <button id="youtube-popup-btn"
-          class="fixed bottom-6 right-6 z-50 bg-red-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-red-700 transition flex items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm12-3c0-2.761-2.239-5-5-5H7C4.239 7 2 9.239 2 12s2.239 5 5 5h10c2.761 0 5-2.239 5-5z"/></svg>
+          class="fixed bottom-6 right-6 z-50 bg-red-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-red-700 transition flex items-center gap-2" style="margin-bottom: 50px;">
+    <i class="fa-brands fa-youtube"></i>
     Watch Our Patients’ Stories
   </button>
-
-  <!-- YouTube Popup Modal -->
+</div>
+  
   <div id="youtube-popup" class="hidden fixed inset-0 bg-black/80 z-50 items-center justify-center">
     <div class="wrap">
       <iframe id="youtube-iframe" class="w-full h-full rounded-xl"
@@ -773,7 +923,7 @@
     </div>
   </div>
 
-  <!-- Existing video modal for testimonial thumbnails -->
+  
   <div id="video-modal-overlay">
     <div id="video-modal-content">
       <button id="video-modal-close" aria-label="Close video">&times;</button>
@@ -781,7 +931,7 @@
     </div>
   </div>
 
-  <!-- Scripts -->
+  
   <script>
     // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
