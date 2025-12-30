@@ -116,7 +116,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between text-xs sm:text-sm">
     
     <div class="flex items-center gap-2 truncate">
-      <span class="font-bold bg-white/20 px-2 py-0.5 rounded">LAST CHANCE</span>
+      <span class="font-bold bg-white/20 px-2 py-0.5 rounded">REWARDS PROGRAM</span>
       <span class="hidden sm:inline">Don't miss out on exclusive Rewards Program offers!</span>
     </div>
 
@@ -127,7 +127,7 @@
       <div class="flex gap-1"><span class="timer-seconds">00</span>s</div>
       
       <a href="rewards/index.html" class="ml-2 bg-white text-[var(--accent)] px-3 py-1 rounded-full text-xs font-bold hover:bg-gray-100 transition">
-        View
+        GET YOUR REWARDS
       </a>
     </div>
   </div>
@@ -505,11 +505,26 @@
             </div>
           </div>
           
-          <div class="fade-in order-1 md:order-2 relative">
-            <div class="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-transparent rounded-2xl"></div>
-            <img src="https://images.pexels.com/photos/6620332/pexels-photo-6620332.jpeg?auto=format&fit=crop&q=80&w=1000" alt="Athlete performance" class="rounded-2xl shadow-2xl w-full h-80 md:h-auto object-cover object-top transform md:rotate-2 hover:rotate-0 transition duration-500" />
+          <div class="fade-in order-1 md:order-2 relative h-80 md:h-[728px] w-full transform md:rotate-2 hover:rotate-0 transition duration-500 rounded-2xl shadow-2xl overflow-hidden" id="sports-slider-container">
+            
+            <div class="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-transparent z-20 pointer-events-none"></div>
+
+            <img src="https://images.pexels.com/photos/6620743/pexels-photo-6620743.jpeg?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Athlete running" 
+                 class="sports-slide absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 opacity-100 ease-in-out" />
+
+            <img src="https://images.pexels.com/photos/34014534/pexels-photo-34014534.jpeg?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Basketball player shooting" 
+                 class="sports-slide absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 opacity-0 ease-in-out" />
+
+            <img src="https://images.pexels.com/photos/104747/pexels-photo-104747.jpeg?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Golf player hitting ball" 
+                 class="sports-slide absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 ease-in-out" />
+
+            <img src="https://images.pexels.com/photos/12616084/pexels-photo-12616084.jpeg?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Soccer player shooting at night" 
+                 class="sports-slide absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 ease-in-out" />
           </div>
-        </div>
       </div>
     </section>
 
@@ -1136,6 +1151,30 @@
 
   // Sistemi başlat
   initRewards();
+
+  // Sports Vision Slider Logic
+  function startSportsSlider() {
+    const slides = document.querySelectorAll('.sports-slide');
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    
+    setInterval(() => {
+      // Mevcut slaytın opaklığını 0 yap
+      slides[currentSlide].classList.remove('opacity-100');
+      slides[currentSlide].classList.add('opacity-0');
+      
+      // Bir sonraki slayta geç (modülo işlemi ile başa döner)
+      currentSlide = (currentSlide + 1) % slides.length;
+      
+      // Yeni slaytın opaklığını 1 yap
+      slides[currentSlide].classList.remove('opacity-0');
+      slides[currentSlide].classList.add('opacity-100');
+    }, 2000); // 2000ms = 2 saniye
+  }
+
+  // Slider'ı başlat
+  startSportsSlider();
   </script>
 </body>
 </html>
